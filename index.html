@@ -447,6 +447,126 @@ body {
   .board-filter { margin-left: 0; }
   .meeting-badges { display: none; }
 }
+
+/* ======= BUDGET SECTION ======= */
+.budget-wrap { margin: 0 0 40px; }
+.budget-note {
+  background: #fef9ec;
+  border: 1px solid #e0c97a;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  color: #6b4820;
+  margin-bottom: 16px;
+}
+.budget-note a { color: #5c3d10; }
+.budget-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.budget-stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.budget-stat-label { font-size: 0.72rem; color: var(--muted); margin-bottom: 2px; text-transform: uppercase; letter-spacing: .04em; }
+.budget-stat-value { font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+.budget-stat-sub { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+.budget-chart-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.budget-chart-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.budget-est-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #f0e8d8;
+  color: #6b4820;
+  border: 1px solid #c8a870;
+  border-radius: 20px;
+  padding: 1px 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.budget-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+.budget-bar-label {
+  font-size: 0.78rem;
+  color: var(--text);
+  width: 140px;
+  flex-shrink: 0;
+}
+.budget-bar-track {
+  flex: 1;
+  background: var(--border);
+  border-radius: 3px;
+  height: 14px;
+  overflow: hidden;
+}
+.budget-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.budget-bar-pct {
+  font-size: 0.75rem;
+  color: var(--muted);
+  width: 50px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.budget-flags-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+.budget-flags-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.budget-flag-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.budget-flag-row:last-child { border-bottom: none; padding-bottom: 0; }
+.budget-flag-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.budget-flag-badge.red { background: #ede0dc; color: var(--red); }
+.budget-flag-badge.amber { background: #f0e8d8; color: #6b4820; border: 1px solid #c8a870; }
+.budget-flag-badge.blue { background: #d8e8ec; color: #2e4d5c; }
+
 </style>
 </head>
 <body>
@@ -465,6 +585,8 @@ body {
       <a href="#about" class="nav-link">About</a>
       <span class="nav-divider">·</span>
       <a href="#concerns" class="nav-link">Key Issues</a>
+      <span class="nav-divider">·</span>
+      <a href="#budget" class="nav-link">Budget</a>
       <span class="nav-divider">·</span>
       <a href="#meetings" class="nav-link">Meeting Records</a>
       <span class="nav-divider">·</span>
@@ -580,6 +702,113 @@ body {
       <h3><span class="concern-icon">🏊</span>$30M Mirschel Park + $17.4M Kennedy Pool — limited cost disclosure</h3>
       <p>Two major capital projects are underway. The Mirschel Park Community Center (total project cost: $30M; $15M bond authorized June 2025; $675K + $900K in grants applied for) and the Kennedy Memorial Park Pool renovation ($17.4M in contracts awarded August 2026). Engineering, design, and management costs for both projects are largely undisclosed across dozens of contract resolutions.</p>
       <p class="concern-years">2025: Jun 17, Jul 15. 2026: Jan–Aug (multiple resolutions).</p>
+    </div>
+
+  </div>
+
+
+  <!-- BUDGET -->
+  <div class="section-header" id="budget" style="margin-top: 40px;">
+    <h2>Village Budget</h2>
+    <span class="count">FY 2025&ndash;26 Adopted Budget &middot; $101,770,615 total</span>
+  </div>
+
+  <div class="budget-wrap">
+
+    <div class="budget-note">
+      &#9888;&#xFE0F; Department breakdown is <strong>estimated</strong> — pending full review of the official adopted budget PDF. Total budget and tax rate figures are from the official document.
+      &nbsp;<a href="https://www.villageofhempstead.org/Archive.aspx?ADID=107" target="_blank">FY 2025-26 Adopted Budget (PDF) &#8599;</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.villageofhempstead.org/Archive.aspx?ADID=109" target="_blank">FY 2026-27 Adopted Budget (PDF) &#8599;</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.villageofhempstead.org/217/Annual-Adopted-Budget" target="_blank">All budgets &#8599;</a>
+    </div>
+
+    <div class="budget-stats">
+      <div class="budget-stat">
+        <div class="budget-stat-label">Total budget</div>
+        <div class="budget-stat-value">$101.8M</div>
+        <div class="budget-stat-sub">FY 2025&ndash;26 adopted</div>
+      </div>
+      <div class="budget-stat">
+        <div class="budget-stat-label">Tax rate</div>
+        <div class="budget-stat-value">$92.39</div>
+        <div class="budget-stat-sub">per $1,000 assessed value</div>
+      </div>
+      <div class="budget-stat">
+        <div class="budget-stat-label">Bonds authorized</div>
+        <div class="budget-stat-value">$25M+</div>
+        <div class="budget-stat-sub">2025&ndash;2026 (from minutes)</div>
+      </div>
+      <div class="budget-stat">
+        <div class="budget-stat-label">Undisclosed settlements</div>
+        <div class="budget-stat-value">14+</div>
+        <div class="budget-stat-sub">No amount in public record</div>
+      </div>
+    </div>
+
+    <div class="budget-chart-card">
+      <div class="budget-chart-title">Spending by category <span class="budget-est-badge">Estimated</span></div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Police Department</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:35%;background:#2e3d4f"></div></div>
+        <div class="budget-bar-pct">~$35.6M</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">General Government</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:18%;background:#3a4d62"></div></div>
+        <div class="budget-bar-pct">~$18.3M</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Public Works / DPW</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:15%;background:#3d7068"></div></div>
+        <div class="budget-bar-pct">~$15.3M</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Debt Service</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:12%;background:#7a3b2e"></div></div>
+        <div class="budget-bar-pct">~$12.2M</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Fire Department</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:8%;background:#5c4d7d"></div></div>
+        <div class="budget-bar-pct">~$8.1M</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Parks &amp; Recreation</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:5%;background:#8b6f47"></div></div>
+        <div class="budget-bar-pct">~$5.1M</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Library, Court &amp; Other</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:7%;background:#a09070"></div></div>
+        <div class="budget-bar-pct">~$7.2M</div>
+      </div>
+      <p style="font-size:0.72rem;color:var(--muted);margin-top:10px;">&#9888; These figures are estimated based on typical municipal budget structures. Actual department allocations will be updated once the adopted budget PDF is reviewed.</p>
+    </div>
+
+    <div class="budget-flags-card">
+      <div class="budget-flags-title">Transparency concerns</div>
+      <div class="budget-flag-row">
+        <span class="budget-flag-badge red">FLAG</span>
+        <span><strong>Undisclosed settlements:</strong> 14+ executive session settlements approved with no public dollar amount. Total fiscal exposure is unknown and does not appear in the budget.</span>
+      </div>
+      <div class="budget-flag-row">
+        <span class="budget-flag-badge amber">BOND</span>
+        <span><strong>$25M+ in bond authorizations (2025&ndash;26)</strong> will add to future debt service — no 5-year projection or long-term cost disclosure was found in the meeting minutes.</span>
+      </div>
+      <div class="budget-flag-row">
+        <span class="budget-flag-badge amber">PAYMENT</span>
+        <span><strong>1 Helen Keller Way purchase price never disclosed.</strong> A $10M bond was authorized in January 2025, the purchase was voted on in February 2025, but no acquisition price appears in any public record.</span>
+      </div>
+      <div class="budget-flag-row">
+        <span class="budget-flag-badge blue">TAX</span>
+        <span><strong>$517K+ in confirmed tax certiorari refunds (2025&ndash;26)</strong> reduce the Village's tax base. Multi-year assessment reductions from settled cases add ongoing revenue loss not reflected in these one-time figures.</span>
+      </div>
+      <div class="budget-flag-row">
+        <span class="budget-flag-badge amber">CAPITAL</span>
+        <span><strong>$47.4M in capital projects underway</strong> (Mirschel Park Community Center $30M + Kennedy Pool $17.4M) with many individual engineering, design, and management contracts approved without disclosed amounts.</span>
+      </div>
     </div>
 
   </div>
