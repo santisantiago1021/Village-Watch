@@ -72,6 +72,24 @@ body {
   transition: background 0.15s;
 }
 .nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.12); color: white; }
+.lang-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.lang-btn:hover, .lang-btn.active {
+  background: rgba(255,255,255,0.25);
+  color: white;
+  border-color: rgba(255,255,255,0.5);
+}
 .nav-divider { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
 
 /* ======= MAIN LAYOUT ======= */
@@ -451,6 +469,11 @@ body {
       <a href="#meetings" class="nav-link">Meeting Records</a>
       <span class="nav-divider">·</span>
       <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank" class="nav-link">Source Documents ↗</a>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:4px; padding: 0 8px;">
+        <button class="lang-btn" onclick="setLang('en')" id="btn-en" title="English">EN</button>
+        <button class="lang-btn" onclick="setLang('es')" id="btn-es" title="Español">ES</button>
+        <button class="lang-btn" onclick="setLang('ht')" id="btn-ht" title="Kreyòl Ayisyen">HT</button>
+      </div>
     </div>
   </nav>
 </header>
@@ -1256,5 +1279,44 @@ function applyFilters() {
   noResults.style.display = shown === 0 ? 'block' : 'none';
 }
 </script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'es,ht,en',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-' + lang).classList.add('active');
+  if (lang === 'en') {
+    var frame = document.querySelector('.goog-te-banner-frame');
+    if (frame) {
+      var restore = frame.contentDocument.querySelector('.goog-te-button button');
+      if (restore) restore.click();
+    }
+    var cookie = document.cookie.match(/googtrans=([^;]+)/);
+    if (cookie) {
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname + ';';
+      location.reload();
+    }
+    return;
+  }
+  var combo = document.querySelector('.goog-te-combo');
+  if (combo) {
+    combo.value = lang;
+    combo.dispatchEvent(new Event('change'));
+  } else {
+    document.cookie = 'googtrans=/en/' + lang + '; path=/';
+    location.reload();
+  }
+}
+document.getElementById('btn-en').classList.add('active');
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
