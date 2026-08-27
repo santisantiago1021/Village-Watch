@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Village of Hempstead – 2025 Meeting Minutes Summary</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: #f7f6f2; color: #1a1a1a; padding: 32px 24px; max-width: 1100px; margin: 0 auto; }
+  header { border-top: 5px solid #1a2744; padding-top: 20px; margin-bottom: 32px; }
+  header h1 { font-size: 1.6rem; font-weight: 700; color: #1a2744; letter-spacing: -0.01em; }
+  header p { font-size: 0.85rem; color: #666; margin-top: 6px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .section-title { font-size: 1rem; font-weight: 700; color: #1a2744; font-family: 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.06em; margin: 36px 0 12px 0; padding-bottom: 6px; border-bottom: 2px solid #1a2744; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.75rem; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-size: 0.68rem; font-weight: 600; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.03em; white-space: nowrap; }
+  .tag-money   { background: #fde8c8; color: #7a4000; }
+  .tag-settle  { background: #fde8c8; color: #7a4000; border: 1px solid #f5a623; }
+  .tag-flag    { background: #fde2e2; color: #7a0000; }
+  .tag-policy  { background: #ddeeff; color: #003366; }
+  .tag-staff   { background: #e8f5e9; color: #1b5e20; }
+  .tag-infra   { background: #f3e5f5; color: #4a148c; }
+  .tag-exec    { background: #eeeeee; color: #333; }
+  .tag-missing { background: #fffde7; color: #5d4037; border: 1px dashed #f5a623; }
+  .meeting-card { background: white; border: 1px solid #ddd; border-left: 4px solid #1a2744; margin-bottom: 16px; border-radius: 2px; }
+  .meeting-card.planning { border-left-color: #2e7d32; }
+  .meeting-card.zoning { border-left-color: #6a1b9a; }
+  .meeting-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid #eee; cursor: pointer; user-select: none; }
+  .meeting-header:hover { background: #f9f9f7; }
+  .meeting-date { font-size: 0.95rem; font-weight: 700; color: #1a2744; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .meeting-type { font-size: 0.75rem; color: #888; font-family: 'Helvetica Neue', Arial, sans-serif; margin-left: 10px; }
+  .chevron { font-size: 0.8rem; color: #999; transition: transform 0.2s; }
+  .chevron.open { transform: rotate(180deg); }
+  .meeting-body { padding: 0 16px; display: none; }
+  .meeting-body.open { display: block; }
+  .item-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.84rem; line-height: 1.5; }
+  .item-row:last-child { border-bottom: none; }
+  .item-tag { flex-shrink: 0; margin-top: 2px; }
+  .item-text { flex: 1; color: #333; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .amount { font-weight: 700; color: #7a4000; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .flag-text { color: #7a0000; }
+  .total-bar { background: #1a2744; color: white; padding: 6px 16px; font-size: 0.75rem; font-family: 'Helvetica Neue', Arial, sans-serif; display: flex; justify-content: space-between; }
+  .total-bar.planning-bar { background: #2e7d32; }
+  .total-bar.zoning-bar { background: #6a1b9a; }
+  .notice { background: #fffde7; border: 1px solid #f5a623; border-radius: 3px; padding: 12px 16px; margin-bottom: 24px; font-size: 0.82rem; font-family: 'Helvetica Neue', Arial, sans-serif; color: #5d4037; line-height: 1.5; }
+  .patterns { background: #fff; border: 1px solid #ddd; border-left: 4px solid #c0392b; padding: 16px; margin-bottom: 28px; border-radius: 2px; }
+  .patterns h2 { font-size: 0.9rem; font-weight: 700; color: #c0392b; font-family: 'Helvetica Neue', Arial, sans-serif; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .patterns ul { list-style: none; padding: 0; }
+  .patterns li { font-size: 0.83rem; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 6px 0; border-bottom: 1px solid #f5f5f5; color: #333; display: flex; gap: 8px; align-items: flex-start; }
+  .patterns li:last-child { border-bottom: none; }
+  .bullet { color: #c0392b; flex-shrink: 0; }
+  footer { font-size: 0.75rem; color: #999; font-family: 'Helvetica Neue', Arial, sans-serif; margin-top: 32px; border-top: 1px solid #ddd; padding-top: 14px; line-height: 1.6; }
+  footer a { color: #1a2744; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Village of Hempstead — 2025 Meeting Minutes Summary</h1>
+  <p>Board of Trustees · Planning Board · Zoning Board &nbsp;·&nbsp; Compiled from villageofhempstead.org/AgendaCenter &nbsp;·&nbsp; Last updated Aug 25, 2025</p>
+</header>
+
+<div class="notice">
+  <strong>Coverage note:</strong> This file covers <strong>48 sets of minutes</strong>: all 26 BOT regular/special/annual meetings (Jan 7 – Dec 16), all 11 Planning Board meetings (Jan 27 – Dec 15), and all 11 Zoning Board meetings (Jan 2 – Dec 4). The Dec 2 BOT minutes URL (ID 1113) returned the same content as Dec 16 — both appear to be the Dec 16 meeting. The Dec 2 meeting's distinct content (Hempstead Convenience Store 2 Corp. hearing) is referenced in Dec 16 minutes as having been held Dec 2, confirming it occurred but its separate minutes were not accessible. Note that the Nov 18 BOT minutes page included hearing on Good Cause Eviction (not Oct 21 as originally scheduled).
+</div>
+
+<div class="patterns">
+  <h2>Patterns Worth Watching</h2>
+  <ul>
+    <li><span class="bullet">▶</span> <strong>$10M bond for unnamed property + undisclosed purchase price at 1 Helen Keller Way.</strong> Jan 7: $10M bond authorized for "acquisition of real property" — no property named. Feb 18: purchase contract executed for 1 Helen Keller Way — unanimous vote, no purchase price in resolution. Jun 3 and Nov 18: H2M authorized for asbestos survey and construction documents for roof replacement, electrical, HVAC, elevator (combined ~$14,065 in engineering fees). The full acquisition cost and renovation budget remain undisclosed in public minutes through year-end.</li>
+    <li><span class="bullet">▶</span> <strong>Two consultants hired on 3-2 votes to study the same City of Hempstead transformation question.</strong> Feb 18: Laberge Group retained (3-2: Daniels/Burroughs/Hobbs vs. Griffith/Boone). Apr 1: CGR (Center for Governmental Research) also retained on the same 3-2 split. No report or findings from either consultant appeared in any subsequent 2025 meeting minutes. Neither contract disclosed a dollar amount.</li>
+    <li><span class="bullet">▶</span> <strong>Executive session followed immediately by undisclosed litigation vote — 5 confirmed instances in 2025.</strong> Mar 4: 3 undisclosed matters. Apr 15: 1 matter. May 6: 1 matter. Jun 17: 1 matter (Burroughs ABSTAINED — unusual). Jul 1: 1 matter. Oct 7: 1 matter. None carry public amounts or party names. The Village Attorney's settlement authority was also increased from $5,000 to $15,000 (Oct 7) — matters below that threshold will never require Board approval at all.</li>
+    <li><span class="bullet">▶</span> <strong>Trustee Burroughs attendance pattern — frequent absences or late arrivals, full year 2025.</strong> Jan 21 (Zoom), Mar 4 (ABSENT), Apr 1 (ABSENT), Apr 7 (ABSENT), Apr 15 (ABSENT), May 6 (ABSENT), May 20 (ABSENT), Jun 17 (arrived late 6:29 pm for 5:45 pm hearing), Jul 1 (present), Sep 16 (present but Daniels+Carter EXCUSED), Oct 21 (present but entered executive session to discuss his own pension record — ROA form approved with Burroughs abstaining), Dec 16 (arrived late 6:37 pm for 6:15 pm hearing). Jun 5: Burroughs ZBA application case #2164 — his own variance for 274 Rhodes Ave was approved with conditions July 3.</li>
+    <li><span class="bullet">▶</span> <strong>Tax certiorari settlements at nearly every BOT meeting, with prospective assessment locks.</strong> 2025 confirmed refunds: $3,000 (Madonna Holdings, Jan 7), $3,800 (535 S. Franklin, Feb 18), $17,000 (415 S. Franklin, May 6), $22,500 (Mark Wieboldt 416 Clinton, May 6), $22,000 (Fulton 215 LLC 131-133F Fulton, May 20), $2,800 (BP Products / Look Oil 375 Clinton, Jun 3), $9,750 (Hempstead LGL 16 Burr St, Aug 4), $5,000 (Hempstead LGL 92 Union Pl, Aug 4), $12,500 (Christian Castillo 140 Front St, Sep 2), $28,000 (316-318 Fulton LG LLC, Nov 3), plus J.M. Main Street $19,550 (Mar 19). Running 2025 total: at least <strong>$145,900</strong> in direct refunds plus cascading assessment reductions locked for 3 years each.</li>
+    <li><span class="bullet">▶</span> <strong>Business license revolving door — suspensions opened and reversed in the same cycle.</strong> Multiple licenses were suspended then restored via stipulation (Reyna's Kitchen, Rafa Deli, JER Deli, Luis Lopez/Chase Collision — all reversed Apr 1 after hearings through Jan-Mar). Sep 2: Brothers 3 Deli suspension resolved via stipulation. Sep 16: AAAA Nassau Inc. tow license suspension reversed (after 3 adjournments spanning Jun 17 – Sep 2). Dec 16: Hempstead Convenience Store 2 Corp. license revoked — this was upheld, making it an outlier where revocation actually stuck.</li>
+    <li><span class="bullet">▶</span> <strong>Laberge Group receiving repeated addenda with no competitive rebid — full 2025 picture.</strong> Jan 7 (+$7,500 Mirschel Park), Jan 21 (rate update + DOZ benchmark — no amount), Mar 19 (+$4,500 × 7 priority projects = $31,500), Apr 1 (+$126,500 Mirschel Park expanded design), Jun 3 (grant management services 2025-2026 — no amount). Cumulative disclosed addenda: at least $165,500, with additional undisclosed amounts. No competitive rebid process mentioned.</li>
+    <li><span class="bullet">▶</span> <strong>Flock Safety contract — original signed Jan 21, 2025, no amount disclosed; expanded Jun 17, 2025.</strong> Jan 21: initial Flock agreement for license plate readers (no amount). Jun 17: new agreement for Gunshot Detection system added (no amount). Both approved unanimously; neither disclosed a contract value. The Feb 2026 extension (shown in the 2026 file) claims savings of "over $1M" but still discloses no contract cost.</li>
+    <li><span class="bullet">▶</span> <strong>Major capital projects approved with no total budget disclosed.</strong> Jun 17: $15M bond authorized for Mirschel Park Community Center; total project cost stated as $30M. Jul 15 (Special): EPF grant application for Mirschel Park ($675,000 requested). Kennedy Park Pool: SEQRA Negative Declaration and DASNY grant approved (Apr 15); H2M engineering for pool authorized (Apr 15, no amount); ASHRAE Level II energy audit authorized (Aug 19 Special, no amount). Clinton Street Treatment Plant peer review also authorized Aug 19 with no amount.</li>
+    <li><span class="bullet">▶</span> <strong>Prioleau Development Group hired Jun 17 as owner representative for Village construction projects — no amount disclosed.</strong> This is the same firm that receives $10,000/month per the 2026 file (Jul 7, 2026). The 2025 agreement (Jun 17) did not disclose any rate or contract value. No competitive bid process mentioned.</li>
+    <li><span class="bullet">▶</span> <strong>Residency waivers routine — confirmed 2025 instances.</strong> Jun 17: Adam Alvarez (Seasonal), Keren Shriki (Cashier I). Jul 15 Special: Demetra Ingram (Village Auditor). Aug 4: Ayana Raiford + Daniel Clark (Seasonal), Allison Saavedra (Typist-Clerk Bilingual). Sep 2: Kimberly McLean (Deputy Village Attorney). Sep 16: Gregory Antoszyk (Plumbing Inspector). Nov 3: Robert Engel (Plumbing Inspector), Julianne Pulizzi (Cashier I). At least 10 individual residency waivers in 2025.</li>
+    <li><span class="bullet">▶</span> <strong>Good Cause Eviction Law (Local Law #5 of 2025) — failed 2-3 in November.</strong> The law was proposed at the Oct 21 BOT meeting (public hearing held) and voted on Nov 3. Motion FAILED: Burroughs + Whitaker voted YES; Daniels + Carter + Mayor Hobbs voted NO. This is the clearest ideological split in 2025 voting — the Mayor and Deputy Mayor sided with Carter to defeat the tenant protection law.</li>
+    <li><span class="bullet">▶</span> <strong>Trustee Burroughs ZBA variance — potential conflict of interest not noted.</strong> Jun 5: Case #2164 filed by Noah Burroughs for 274 Rhodes Ave — convert single-family to mother/daughter. Jul 3: case approved with conditions (Burroughs absent from ZBA meeting — he does not sit on ZBA, but the public record does not indicate whether the BOT took any conflict-of-interest step). This is the same Burroughs who is a sitting Trustee.</li>
+    <li><span class="bullet">▶</span> <strong>Two major mixed-use development approvals at Planning Board.</strong> Jul 21: 16 Cooper St — 5-story multi-use apartment building approved (Planning Board also designated Cooper Street as a Type C Street). Sep 15: 257 Main St — 7-story mixed-use apartment building approved, with conditions including 10% attainable housing. These represent the largest private development applications of 2025.</li>
+    <li><span class="bullet">▶</span> <strong>Davidoff Hutcher &amp; Citron LLP hired as lobbyists Sep 16 — no amount disclosed, passed 3-0 with Daniels &amp; Carter excused.</strong> The Sep 16 meeting had only Burroughs, Whitaker, and Mayor Hobbs present. All substantive items (including this lobbying contract, the student resource officer contract amendment, and the IMEG increase) were approved by a quorum of 3 with no public amount.</li>
+  </ul>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="tag tag-money">PAYMENT</span> Financial commitment or expenditure</div>
+  <div class="legend-item"><span class="tag tag-settle">SETTLEMENT</span> Tax certiorari or litigation payout</div>
+  <div class="legend-item"><span class="tag tag-flag">FLAG</span> Transparency concern or notable omission</div>
+  <div class="legend-item"><span class="tag tag-policy">POLICY</span> Law, regulation, or governance action</div>
+  <div class="legend-item"><span class="tag tag-staff">PERSONNEL</span> Hiring, promotion, or salary change</div>
+  <div class="legend-item"><span class="tag tag-infra">CONTRACT</span> Infrastructure or capital contract</div>
+  <div class="legend-item"><span class="tag tag-exec">EXEC SESSION</span> Closed session — no public detail</div>
+</div>
+
+<!-- ===== BOARD OF TRUSTEES ===== -->
+<div class="section-title">Board of Trustees</div>
+
+<!-- JAN 7 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">January 7, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Public hearing on Reyna's Kitchen license — held and closed; no decision recorded. Board: Daniels, Burroughs, Griffith, Boone; Mayor Hobbs.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Madonna Holdings LLC — tax cert refund <span class="amount">$3,000</span> (519/531 Fulton Ave, 2018/19–2024/25).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Laberge Engineering — addendum for Mirschel Park: <span class="amount">+$7,500</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Tyler Technologies — card reader: <span class="amount">$456</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text"><strong>$10,000,000 BOND</strong> authorized for "acquisition of real property" — no property named in the resolution. (Likely 1 Helen Keller Way; purchase contract executed Feb 18 — also with no purchase price disclosed.)</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Waqar Dass — temp accounting contractor, <span class="amount">$40/hr</span> through Dec 31, 2025.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$10,010,956 bond + cash (bond not yet drawn)</span></div>
+</div>
+
+<!-- JAN 21 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">January 21, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Subdivision moratorium and convenience store moratorium public hearings — both closed, pending formal adoption. Burroughs attending via Zoom; Griffith absent.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Nassau County Planning Commission — intermunicipal agreement (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Laberge Group — rate update + new addendum for Downtown Overlay Zone benchmark/fee schedule (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">LIRR/MTA — utility agreement for water main through LIRR underpass at Hempstead Station.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Flock Group Inc. (Atlanta, GA) — new police hardware/training/software agreement for license plate readers. <strong>No contract value stated.</strong> This is the original Flock Safety agreement; extended and expanded throughout 2025–2026 without disclosed cost.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Nassau/Suffolk Law Services — 60 parking spaces (Fields 1 and 16), Jan–Dec 2025.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Grievance Day set Feb 18, 2025. Luis Lopez & Sons / Chase Collision Center license revocation hearing scheduled Feb 4.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Virginia Ventura — promoted Buildings Senior Clerk, <span class="amount">$73,282/yr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$73,282/yr salary + multiple undisclosed contract amounts</span></div>
+</div>
+
+<!-- FEB 4 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">February 4, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Luis Lopez / Chase Collision hearing closed — no decision recorded. Subdivision and convenience store moratorium hearings scheduled Mar 4.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Danziger & Markhoff LLP — actuarial services: <span class="amount">$9,350</span> (FY ending May 31, 2024).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Risk Strategies Consulting — actuarial: <span class="amount">$15,000</span> (FY ending May 31, 2024).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Tax sale authorized May 1, 2025 (annual process).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Justice Court Dec 2024: 4,959 cases, <span class="amount">$435,486</span> remitted.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$24,350 in actuarial fees</span></div>
+</div>
+
+<!-- FEB 18 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">February 18, 2025</span><span class="meeting-type">Grievance Day + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">535 S. Franklin St LLC (President Street Properties) — tax cert refund <span class="amount">$3,800</span> (2016/17–2023/24); assessment locked <span class="amount">$14,200</span> for 3 years.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Faith Baptist Church (58 Hilton Ave) — sanitation refund <span class="amount">$596.33</span> + $596.33 waived.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Laberge Group: study "transforming into City of Hempstead" — 3-2 vote.</strong> AYES: Daniels, Burroughs, Hobbs. NOES: Griffith, Boone. No amount disclosed.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text"><strong>1 Helen Keller Way: purchase contract executed.</strong> Unanimous vote — no purchase price in resolution. Bond was authorized Jan 7 ($10M) without naming this property. Combined, the Village has committed to a property acquisition with no public dollar figure at either step.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">DOJ Byrne Grant: <span class="amount">$23,491</span> (Oct 2023–Sep 2025).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">LanguageLine — phone interpretation for Village Court (no amount). Orchid Sewer & Water — <span class="amount">$309,700</span> water main repair/replacement (Bid #9 extension).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">NJC Scrap Metal — <span class="amount">$17,455</span> for 13 obsolete vehicles.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Julia D'Agostino — Special Prosecutor <span class="amount">$120/hr</span> (Feb 18–Apr 7). Scott Clark — DPW General Supervisor (promotion), <span class="amount">$115,028/yr</span>. Wallace Watts — PT→FT DPW Building Maintenance, <span class="amount">$57,635/yr</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Reyna's Kitchen: new hearing scheduled Apr 1.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$354,642 + undisclosed property acquisition + undisclosed city-study contract</span></div>
+</div>
+
+<!-- MAR 4 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">March 4, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Subdivision + convenience store moratorium hearings closed. Burroughs ABSENT. 2025/26 Assessment Roll finalized.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session entered → <strong>3 separate "matters" approved</strong>, all labeled "pending litigation." No party names, no amounts, no descriptions. Boone ABSTAINED on Volunteer Firefighter Award list (unusual).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Three undisclosed litigation matters approved in a single executive session with no public information on any of them — the most undisclosed-matter approvals in a single 2025 meeting.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Luis E. Rodriguez — Special Prosecutor <span class="amount">$120/hr</span>. Steven Melbourne — new PT Sanitation Laborer, <span class="amount">$19/hr</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Village election set Mar 18; BOT meeting rescheduled to Mar 19.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>3 undisclosed litigation settlements + personnel costs</span></div>
+</div>
+
+<!-- MAR 19 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">March 19, 2025</span><span class="meeting-type">Special (Election Canvass) + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Election results canvassed:</strong> Hobbs re-elected (1718–615 over Boone). Carter (1687) and Whitaker (1628) win Trustee seats, replacing Griffith (589) and Ramirez (543). Vaughan wins Justice unopposed (1901).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">J.M. Main Street — tax cert refund <span class="amount">$19,550</span> (149 & 149A Main St, 2017/18–2024/25); assessment locked <span class="amount">$4,410/lot × 2 lots</span> for 3 years.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Mirschel Park: SEQRA Lead Agency declared (community center, sports, rec). Budget hearing set Apr 14. Both moratoriums formally adopted.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Laberge addendum 2024056-01: <span class="amount">+$4,500 per project × 7 projects</span> = $31,500 (Mirschel Park, Water System, Central Firehouse, Parking Garages/TOD, Central Park area, Armory, Fireman Field).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">West Town Payments — parking meter collection contract (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Lance Gaddist — PT→FT Water Plant Laborer, <span class="amount">$57,635/yr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$51,050 confirmed + $31,500 Laberge addendum</span></div>
+</div>
+
+<!-- APR 1 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">April 1, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">H2M — Blocking Use Diagram for 1 Helen Keller Way (no amount). IMEG — Sewer improvements on Main Street (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>CGR (Center for Governmental Research): hired to study City of Hempstead transformation — AGAIN 3-2.</strong> AYES: Daniels, Burroughs, Hobbs. NOES: Griffith, Boone. Second consultant on same question; no amount disclosed for either Laberge or CGR.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Reyna's Kitchen license suspension reversed via stipulation. Rafa Deli (666 Fulton), JER Deli (208 S. Franklin), Luis Lopez & Sons / Chase Collision — all suspensions reversed via stipulation on same date.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Laberge — <span class="amount">+$126,500</span> for Mirschel Park expanded design (addendum 2024064-02).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Michael Akins + Tyshon Johnson — new PT Sanitation Laborers, <span class="amount">$19/hr each</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$126,500 Laberge addendum + undisclosed CGR/IMEG/H2M amounts</span></div>
+</div>
+
+<!-- APR 7 ANNUAL -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">April 7, 2025</span><span class="meeting-type">Annual Organizational Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">New board sworn in: Carter + Whitaker replace Griffith + Boone. Daniels reappointed Deputy Mayor. Miguel Alvarado appointed Associate Village Justice.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">All standard annual appointments confirmed: Perez (Clerk), Gill (Treasurer), Marshall (Attorney), Germinaro (DPW). 10 special prosecutors appointed at <span class="amount">$120/hr appearances / $60/hr motions</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Nawrocki Smith LLP — annual auditors: <span class="amount">$68,000</span>. Harris Beach — Special Counsel (election law, general municipal, litigation) — no amount.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Zoning Board: "Allah Supreme Mathematics" appointed as new member (term to 2030). Planning Board: Arthur Cole added; Pettus remains Chair.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Mayor salary: <span class="amount">$170,000</span>; Deputy Mayor: <span class="amount">$47,000</span>; Trustees: <span class="amount">$36,000 each</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$68,000 audit + $335,000/yr elected official salaries</span></div>
+</div>
+
+<!-- APR 14 BUDGET HEARING -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">April 14, 2025</span><span class="meeting-type">Budget Public Hearing</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">FY 2025/26 budget proposed: <span class="amount">$101,770,615 total</span>. Tax rate proposed <span class="amount">$92.08</span> (final $92.39); levy +3.0%.</span></div>
+  </div>
+  <div class="total-bar"><span>Budget total</span><span>$101,770,615 FY 2025/26</span></div>
+</div>
+
+<!-- APR 15 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">April 15, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Exec session (litigation) → 1 undisclosed matter approved. Exec session (personnel) → 2 police sergeant promotions.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Steven Wilson — Police Sergeant (promotion): <span class="amount">$182,502/yr</span>. Tiffany Gordon — Police Sergeant (promotion): <span class="amount">$180,277/yr</span>. Gee-Kang Hwee + Sean Carty — Water Plant Operator Trainees: <span class="amount">$71,101/yr each</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">H2M — Kennedy Park Pool engineering services (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Budget FY 2025/26 formally adopted: <span class="amount">$101,770,615</span>, rate <span class="amount">$92.39</span>. Burroughs ABSENT.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$504,981 in new salaries + 1 undisclosed settlement</span></div>
+</div>
+
+<!-- MAY 6 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">May 6, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Exec session → 1 undisclosed litigation matter approved. Burroughs ABSENT.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">415 S. Franklin LLC (Macchia Group) — tax cert <span class="amount">$17,000</span> (2018/19–2023/24); assessment locked <span class="amount">$22,500</span> for 3 years.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Mark Wieboldt (416 Clinton) — tax cert <span class="amount">$22,500</span> (2018/19–2024/25); assessment locked <span class="amount">$12,500</span> for 3 years.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Kennedy Park Pool: SEQRA Lead Agency + Negative Declaration (DASNY grant). Good Cause Eviction hearing scheduled Oct 21. Moratorium hardship exemption hearing scheduled May 20. Code amendment hearings scheduled Jun 3 (vehicle impound + towing).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Carter Ledyard Milburn — Legal Services retained (no amount). New legal firm added; no competitive bid or scope disclosed.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">250 Fulton Ave LLC — 50 parking spaces (Field 4), Jun 2025–May 2027. SAN GEN LLC — 13 parking spaces (Field 4), Jan–Dec 2025.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Sophie's Deli & Mini Mart (28 Main St) — license REVOKED. H2M — fire station feasibility study + bond referendum proposal (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Sean Simmons — DPW Water & Sewer Supervisor, <span class="amount">$96,294/yr</span>. Christian Centeno — PT→FT Water & Sewer Trainee, <span class="amount">$59,831/yr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$39,500 in tax settlements + $156,125/yr personnel + 1 undisclosed settlement</span></div>
+</div>
+
+<!-- MAY 20 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">May 20, 2025</span><span class="meeting-type">Public Hearing + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Hardship exemption hearing for subdivision moratorium — held and closed. Burroughs ABSENT from regular meeting. AAAA Nassau Inc. tow license revocation hearing scheduled Jun 17.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Fulton 215 LLC f/k/a Nader Enterprises (131-133F Fulton Ave) — tax cert refund <span class="amount">$22,000</span> (2019/20–2024/25); assessment locked <span class="amount">$36,000</span> for 3 years.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Gallagher Bassett Services — workers' comp administration pricing renewal (Jun 1, 2025 – May 31, 2026; no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">6 new Police Officers hired at <span class="amount">$64,160/yr each</span>: Alexander Sukhdeo, Kenneth Moreno, Kevin Alvarado, Kevin Mejia, Patrick Walters, Samil Acevedo.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Justice Court Apr 2025: 6,284 cases, <span class="amount">$508,766</span> remitted.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$22,000 settlement + $384,960/yr new police salaries</span></div>
+</div>
+
+<!-- JUN 3 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">June 3, 2025</span><span class="meeting-type">3 Public Hearings + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Three public hearings held and closed: (1) VOH Fire Dept agreement for fire protection; (2) Ch. 131 vehicle impound code amendment; (3) Ch. 127 towing services code amendment. All full board present.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">BP Products North America / Look Oil (375 Clinton St) — tax cert refund <span class="amount">$2,800</span> (2022/23–2023/24).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Bank of America — 14 parking spaces (Field #4), Jun 1, 2025 – Dec 31, 2027.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Downtown Overlay Zone fees amended per CDA Commissioner Oglesby.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Water treatment chemical bids: Coyne Chemical (Sodium Hexametaphosphate) <span class="amount">$35,162</span>; Univar Solutions (Liquid Caustic Soda) <span class="amount">$134,325</span>; PVS Minibulk (Sodium Hypochlorite) <span class="amount">$107,100</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Mirschel Park — SEQRA Negative Declaration adopted (confirms no significant environmental impact).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">H2M — asbestos survey + construction documents for roof replacement at 1 Helen Keller Way (two separate resolutions; no dollar amounts). Laberge Group — 2025–2026 grant management services (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Wright Risk Management — workers' comp administration, Jun 1, 2025–May 31, 2026 (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Christopher Sarduy — Bus Driver-Recreation Attendant salary change: <span class="amount">$81,705/yr</span>. Justin Goodson + Jonathan Gamble — PT Sanitation Laborers, <span class="amount">$19/hr each</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$279,387 in bids + $2,800 settlement + multiple undisclosed contract amounts</span></div>
+</div>
+
+<!-- JUN 17 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">June 17, 2025</span><span class="meeting-type">Public Hearing + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">AAAA Nassau Inc. tow license hearing adjourned (Burroughs arrived late at 6:29 pm for 5:45 pm hearing). Justice Court May 2025: 6,467 cases, <span class="amount">$555,198.50</span> remitted.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session (litigation settlement) → 1 matter approved. <strong>Burroughs ABSTAINED</strong> on the executive session approval — the only trustee to do so. No amount or party disclosed.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Flock Safety — additional agreement for <strong>Gunshot Detection</strong> system (no amount). Tyler Technologies — data conversion services amendment (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">National Grid — groundwater remediation system removal agreement. 12 Franklin Meat Corp. — 90 parking spaces (Field #4), Jun 7, 2025 – Dec 31, 2027.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">New Purchasing Policy adopted (effective Jun 17, 2025). Fire Dept agreement approved. Ch. 131 (vehicle impound) and Ch. 127 (towing) code amendments adopted. Towing Schedule of Fees approved — <strong>non-unanimous: Daniels voted NO</strong> (release $100, tow $225, daily storage $60–$150). Hardship exemption for 174 Lawson St subdivision moratorium DENIED.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Pri-Oleau Development Group LLC — owner representative for Village construction projects (no amount disclosed). This arrangement later revealed as $10,000/month in 2026.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text"><strong>$15,000,000 BOND</strong> authorized for Mirschel Park Community Center — total project cost stated as <span class="amount">$30,000,000</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Residency waivers: Adam Alvarez (Seasonal), Keren Shriki (Cashier I, <span class="amount">$52,694/yr</span>). Jeremy Moore — MEO title change, <span class="amount">$66,980/yr</span>. Tashana McLean — DPW Engineering Laborer, <span class="amount">$57,635/yr</span>. Alexis Garcia — CAD Assistant, <span class="amount">$66,686/yr</span>. George Morgan (PT→FT) + Kanye Staley — Recreation Laborers, <span class="amount">$57,635/yr each</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$15M bond + $300,630/yr personnel + 1 undisclosed settlement</span></div>
+</div>
+
+<!-- JUL 1 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">July 1, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Carter ABSENT. Hardship exemption hearings for 220-228 S. Franklin St. and 174 Lawson St. scheduled Aug 4. AAAA Nassau Inc. tow hearing rescheduled to Aug 4.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session (litigation settlement) → 1 matter approved. No amount or party disclosed.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Tyler Technologies — Tax and Water Dept. agreement amendment (no amount). Crossing Guard Services LLC (Stamford, CT) — RFP awarded for 2025-2026 crossing guard services (no amount). BOT meeting rescheduled Aug 5 → Aug 4 (National Night Out).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Keren Shriki — salary correction to <span class="amount">$54,011/yr</span> (effective Jun 18, 2025).</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>1 undisclosed litigation settlement + undisclosed crossing guard contract</span></div>
+</div>
+
+<!-- JUL 15 SPECIAL -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">July 15, 2025</span><span class="meeting-type">Special Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">NYS OPRHP Environmental Protection Fund (EPF) grant application authorized for Mirschel Park — up to <span class="amount">$675,000</span> requested (grant only; no local match amount stated). Full board present.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Residency waiver: Demetra Ingram (Village Auditor). Demetra Ingram hired — Village Auditor, <span class="amount">$80,000/yr</span>. Monica Rodriguez — Police Neighborhood Aide-PT, <span class="amount">$20/hr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$675,000 grant application + $80,000/yr Village Auditor</span></div>
+</div>
+
+<!-- AUG 4 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">August 4, 2025</span><span class="meeting-type">3 Public Hearings + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">AAAA Nassau tow hearing adjourned again. 220-228 S. Franklin hardship hearing closed. 174 Lawson St. hardship hearing adjourned. Tyler Technologies — reassessment project update presented to Board. Travel Policy adopted (effective Aug 4, 2025).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Hempstead LGL LLC (16 Burr St) — tax cert refund <span class="amount">$9,750</span> (2018/19–2024/25); assessment locked <span class="amount">$11,000</span> for 3 years.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Hempstead LGL LLC (92 Union Place) — tax cert refund <span class="amount">$5,000</span> (2017/18–2024/25); assessment locked <span class="amount">$10,700</span> for 3 years.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">DCJS GIVE 2025-2026 Grant — <span class="amount">$270,000</span> (Jul 1, 2025 – Jun 30, 2026). H2M — MS4 Mapping Grant application fee, <span class="amount">$4,700</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Evergreen Charter School — fire hydrant water supply agreement (no amount). Civic Plus — texting/ADA website compliance (no amount). Nassau/Suffolk Law Services — 40 spaces Field #16 + 40 spaces Field #1 (ratified, Jan–Dec 2025).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session (personnel — Deputy Village Assessor title added to exec compensation resolution, retroactive to Jul 1, 2024). Approved after session.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Residency waivers: Ayana Raiford, Daniel Clark (Seasonal), Allison Saavedra (Typist-Clerk Bilingual). Lori Alexander — Police Sr. Typist-Clerk (promotion), <span class="amount">$73,024/yr</span>. Lenard Hough — PT→FT Recreation Attendant, <span class="amount">$58,502/yr</span>. Alison Saavedra — Bilingual Typist-Clerk, <span class="amount">$51,439/yr</span>. Naia Michelin — temp Accounting, <span class="amount">$35/hr</span>. Blaise Gibson — Special Counsel, <span class="amount">$120/hr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$14,750 settlements + $270,000 grant + $182,965/yr personnel</span></div>
+</div>
+
+<!-- AUG 19 SPECIAL -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">August 19, 2025</span><span class="meeting-type">Special Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">H2M — ASHRAE Level II Energy Audit at Kennedy Memorial Park (no amount). Full board present.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">H2M — Peer Review of Clinton Street Treatment Plant Rehabilitation (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Both H2M engagements approved without disclosed amounts. This is a recurring pattern — H2M has been retained for at least 8 separate scopes in 2025 with amounts missing from most resolutions.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>Undisclosed engineering fees (2 H2M contracts)</span></div>
+</div>
+
+<!-- SEP 2 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">September 2, 2025</span><span class="meeting-type">2 Public Hearings + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">AAAA Nassau tow license hearing finally closed. 174 Lawson St. hardship hearing closed. Full board present.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Christian Castillo (140 Front St) — tax cert refund <span class="amount">$12,500</span> (2016/17–2023/24).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Brothers 3 Deli (205 Harvard St) — license suspension resolved via stipulation.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Local Law #1 (subdivision moratorium) extended 6 months.</strong> Local Law #2 (convenience store moratorium) extended 6 months. Hardship exemption for 220-228 S. Franklin St. APPROVED (160 LLC) — non-unanimous: Carter + Whitaker + Mayor Hobbs YES; <strong>Daniels + Burroughs NO.</strong></span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Residency waiver: Kimberly McLean (Deputy Village Attorney). Kimberly McLean — Deputy VA, <span class="amount">$105,000/yr</span>. Edward Cherubin — Deputy VA salary increase to <span class="amount">$115,575/yr</span>. Demitra Koliokotas-Lynch — Legal Assistant salary increase to <span class="amount">$74,928/yr</span>. Justin Estrella — Utility Worker title change, <span class="amount">$61,483/yr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$12,500 settlement + $356,986/yr new/increased salaries</span></div>
+</div>
+
+<!-- SEP 16 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">September 16, 2025</span><span class="meeting-type">Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Daniels + Carter EXCUSED.</strong> Only Burroughs, Whitaker, Mayor Hobbs present (quorum of 3). All items passed 3-0 without Daniels or Carter.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Hempstead School District — contract amended to add 2 student resource officers (no amount). NYS Governor's Traffic Safety Committee — Seat Belt + PTS Enforcement grant: <span class="amount">$28,520</span> (Oct 2025–Sep 2026).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">AAAA Nassau Inc. tow license suspension REVERSED (after 4+ month process). 174 Lawson St. hardship exemption DENIED.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">IMEG — Phase I Sewer/Water infrastructure contract amended: +<span class="amount">$78,000</span> (total now $1,723,249).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Davidoff Hutcher &amp; Citron LLP — governmental relations / lobbying services retained. <strong>No amount disclosed.</strong> Approved 3-0 with Deputy Mayor Daniels excused.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Residency waiver: Gregory Antoszyk (Plumbing Inspector). Gregory Antoszyk — Building Plumbing Inspector, <span class="amount">$80,047/yr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$106,520 confirmed + undisclosed lobbying contract</span></div>
+</div>
+
+<!-- OCT 7 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">October 7, 2025</span><span class="meeting-type">Public Hearing + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Mayor Hobbs ABSENT. Daniels presiding as Deputy Mayor. Hardship exemption hearing for 229-235 S. Franklin adjourned. 4 new Fire Dept. members reaffirmed.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session (litigation) → 1 matter approved. No amount or party disclosed.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">MCS Consultants Inc. — Village Hall security services, Nov 1, 2025 – Oct 31, 2027 (no amount). LIRR water transmission main installation approved (ratification of prior work — no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Village Attorney settlement authority increased from $5,000 to $15,000</strong> — meaning any settlement under $15K will never require Board approval or public vote going forward.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Videoconference attendance procedures hearing scheduled Nov 18. Hempstead Convenience Store 2 Corp. (134 N. Franklin) license revocation hearing scheduled Nov 5 (later moved to Dec 2). 73B Main St. hardship exemption hearing scheduled Nov 18.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">3 PT laborers hired. Noah Burroughs ROA (pension calendar) reviewed — Burroughs abstained from his own vote.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>1 undisclosed settlement + undisclosed security contract</span></div>
+</div>
+
+<!-- OCT 21 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">October 21, 2025</span><span class="meeting-type">Public Hearing + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Good Cause Eviction (Local Law #5 of 2025) public hearing held and closed. Full board present. Justice Court Sep 2025: 6,445 cases, <span class="amount">$500,171</span> remitted.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">JCAP grant application authorized — up to <span class="amount">$30,000</span> for Village Court 2024-25 cycle.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>CSEA (Civil Service Employees Association) Stipulation of Agreement approved</strong> — Jun 1, 2025 – May 31, 2029 (4-year contract). No financial terms stated in the resolution.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session (personnel matter) — entered and exited; no approval resolution recorded. Genesis Robles hired as Police Officer after session — apparent connection unexplained.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">4 new Police Officers: Michael White, Julius Rutherford, Selena Huang, Genesis Robles — each at <span class="amount">$64,160/yr</span>. Marek Glebocki — PT→FT Automotive Servicer, <span class="amount">$59,831/yr</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Hempstead School District Homecoming Parade: <span class="amount">$6,000</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$6,000 parade + $315,471/yr new police + undisclosed CSEA terms</span></div>
+</div>
+
+<!-- NOV 3 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">November 3, 2025</span><span class="meeting-type">Regular Meeting (rescheduled from Nov 4)</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">316-318 Fulton LG LLC (316-318 Fulton Ave) — tax cert refund <span class="amount">$28,000</span> (2017/18–2018/19).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Good Cause Eviction (Local Law #5 of 2025) — FAILED 2-3.</strong> AYES: Burroughs, Whitaker. NOES: Daniels, Carter, Mayor Hobbs. Motion failed. This is the clearest ideological split of 2025 — Mayor and Deputy Mayor sided against tenant protection.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Terrace Ave. honorarily designated "Hon. Donald L. Ryan Way" (unanimous).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Residency waivers: Robert Engel (Plumbing Inspector), Julianne Pulizzi (Cashier I). Robert Engel — Building Plumbing Inspector, <span class="amount">$80,047/yr</span>. Julianne Pulizzi — Tax & Water Cashier I, <span class="amount">$54,011/yr</span>. Abel Jean-Batista — PT Sanitation Laborer, <span class="amount">$19/hr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$28,000 settlement + $134,058/yr new salaries</span></div>
+</div>
+
+<!-- NOV 18 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">November 18, 2025</span><span class="meeting-type">2 Public Hearings + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Two public hearings closed: (1) 73B Main St. hardship exemption to convenience store moratorium; (2) videoconference attendance procedures. Justice Court Oct 2025: 6,830 cases, <span class="amount">$519,254</span> remitted.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Legal Edge Software — legal case management software: <span class="amount">$9,680</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">H2M — limited asbestos survey, 1 Helen Keller Way: <span class="amount">$5,065</span>. H2M — bid documents for electrical/HVAC/elevator at 1 Helen Keller Way: <span class="amount">$9,000</span>. IMEG — Newmans Court Force Main SOPs: <span class="amount">~$12,500</span>.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Olive Dove Design Collective — design development review for Mirschel Park Community Center + Kennedy Park Pool (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Videoconference attendance procedures adopted (for which hearing was held Nov 18).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Elmer Calderon-Valle — PT→FT Water & Sewer Servicer Trainee, <span class="amount">$59,831/yr</span>. Noah Burroughs ROA approved — Burroughs abstained.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$36,245 in fees + $59,831/yr salary</span></div>
+</div>
+
+<!-- DEC 2 NOTE -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">December 2, 2025</span><span class="meeting-type">Public Hearing (minutes not separately posted)</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">The URL for Dec 2 minutes (ID 1113) returned the Dec 16 meeting content. Dec 2 appears to have hosted the Hempstead Convenience Store 2 Corp. license revocation hearing (referenced in Dec 16 minutes as "a public hearing held on December 2, 2025"). Separate Dec 2 regular meeting minutes were not accessible or may not have been posted separately.</span></div>
+  </div>
+  <div class="total-bar"><span>Note</span><span>Minutes not separately accessible — content merged with Dec 16</span></div>
+</div>
+
+<!-- DEC 16 -->
+<div class="meeting-card">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">December 16, 2025</span><span class="meeting-type">Public Hearing + Regular Meeting</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Public hearing: 229-235 S. Franklin St. hardship exemption — adjourned to Jan 6, 2026. Burroughs absent at start; arrived 6:37 pm. Justice Court Nov 2025: 5,764 cases, <span class="amount">$447,662.69</span> remitted.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Penflex Inc. — Firefighters Service Award Program actuarial/admin services: <span class="amount">$11,120</span> (Nov 1, 2025 – Oct 31, 2026).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Andrea &amp; Towsky Esq. — legal services retained (no amount).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Videoconference attendance procedures formally adopted. <strong>73B Main St. hardship exemption — FAILED 2-2-1.</strong> AYES: Carter, Whitaker. NOES: Daniels, Mayor Hobbs. ABSTAINED: Burroughs. Motion failed (needed majority).</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Hempstead Convenience Store 2 Corp. (134 N. Franklin) — license revocation UPHELD</strong> (hearing was Dec 2). Unanimous. One of the few license actions in 2025 where revocation was not reversed.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Tanisha S. Edwards — Special Prosecutor, <span class="amount">$120/hr</span>. Waqar Dass — accounting contractor extended to Jun 30, 2026 at <span class="amount">$42/hr</span> (rate increase from original $40/hr). Dorien Prince — PT Sanitation Laborer, <span class="amount">$19/hr</span>. Brett Wilson — MEO Trainee, <span class="amount">$61,536/yr</span>.</span></div>
+  </div>
+  <div class="total-bar"><span>Confirmed financial items</span><span>$11,120 Penflex + $61,536/yr MEO + undisclosed legal fees</span></div>
+</div>
+
+<!-- ===== PLANNING BOARD ===== -->
+<div class="section-title">Planning Board</div>
+
+<!-- PB JAN 27 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">January 27, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Members: Pettus (Chair), Turner, Walker, Rodgers, Cole. Cases approved: 393 S. Franklin St (martial arts retail), 60 Main St (pizzeria), 370 Fulton Ave (barbershop), 306 Jerusalem Ave (beauty/nail salon), 152 Main St (restaurant), 815 Front St (subdivision + 2 single-family homes). Adjourned: 84 Windsor Pkwy (alteration — inspection needed).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>6 approvals · 1 adjournment</span></div>
+</div>
+
+<!-- PB FEB 24 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">February 24, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Cases approved: 84 Windsor Pkwy (alterations — Turner voted NO, others YES), 94 N. Franklin St (jewelry store), 72 Cathedral Ave (2-story front/side extension), 352 Fulton Ave Ste A (beauty salon).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>4 approvals (1 non-unanimous)</span></div>
+</div>
+
+<!-- PB MAR 17 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">March 17, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Cases approved: 109 Elmwood Ave (inground pool), Bennett Ave (2-story single-family), 48 Warner Ave (subdivision + 3 single-family homes), 33 Newmans Ct (tire shop). Adjourned: 285 Clinton St, 281 Clinton St (both need full site plans).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>4 approvals · 2 adjournments</span></div>
+</div>
+
+<!-- PB APR 21 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">April 21, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">9 cases approved including: 286 Clinton St (money transfer/grocery), 281 Clinton St (restaurant), 58 Remsen Ave (rear extension), 102 Fairview Blvd (alteration/addition), 109 Elmwood Ave (addition over garage), 283-B Fulton Ave (nail salon), 94 N. Franklin St (hair/nail salon).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>9 approvals</span></div>
+</div>
+
+<!-- PB MAY 19 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">May 19, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">7 cases approved including: 135 Jackson St (barbershop), 154 Fulton Ave (Chipotle), 100 N. Franklin St (delicatessen), 294 Greenwich St (Fish Fry Fridays expanded dining).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>7 approvals</span></div>
+</div>
+
+<!-- PB JUN 16 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">June 16, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Rodgers ABSENT. Cases approved: 159-C Main St (Chinese takeout), 76 N. Franklin St (Alexis Deli), 72 Cathedral Ave (2nd story addition), 188 Princeton St (addition). <strong>Major development pipeline:</strong> Case 1300 — 16 Cooper St (5-story mixed-use): SEQRA Type 1, Negative Declaration, Lead Agency declared, public hearing set Jul 21. Case 1301 — 257 Main St (5-story mixed-use): same SEQRA process, public hearing set Jul 21.</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>4 approvals + 2 major developments into pipeline</span></div>
+</div>
+
+<!-- PB JUL 21 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">July 21, 2025</span><span class="meeting-type">Regular Meeting + Public Hearings · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Case 1300 — 16 Cooper St: 5-story multi-use apartment building APPROVED.</strong> Board also designated Cooper Street as a Type C Street (effective Jul 21). Case 1301 — 257 Main St: adjourned — deficiencies found by Professional Advisory Team; reset to Sep 15.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Regular approvals: 134 Hilton Ave (roof over patio), 299 Surrey Lane (basement alteration), 255 Fulton Ave (Guacado restaurant). Case 1297 — 31 Cornwall Lane: <strong>DENIED</strong> — insufficient living space for 9-bedroom proposal.</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>4 approvals · 1 denial · 1 major development approved (16 Cooper St)</span></div>
+</div>
+
+<!-- PB SEP 15 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">September 15, 2025</span><span class="meeting-type">Regular Meeting + Public Hearing · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Walker RECUSED. <strong>Case 1301 — 257 Main St: 7-story mixed-use apartment building APPROVED</strong> (upgraded from 5-story) with conditions: tandem parking notices to renters, deliveries via Old Franklin only, minimum 10% attainable housing. SEQRA Type 1, Lead Agency declared for coordinated review.</span></div>
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Regular approvals: 89 St. Paul Place (pavilion), 159 Main St (supermarket), 156 Main St (delicatessen), 60B Main St (hair/nail salon), 91 N. Franklin St (multiservice), 142 N. Franklin St (nail/massage salon), 75 St. Paul Pl (inground pool). Case 7-2025: 220-228 S. Franklin St — subdivision approved (no construction).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>8 approvals + 1 major development (257 Main St) approved</span></div>
+</div>
+
+<!-- PB OCT 20 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">October 20, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Full board present (new Deputy VA: Kimberly McLean). Cases approved: 145 N. Franklin St (senior housing mixed-use, 4th extension — Case 843 — long-running), 274 Rhodes Ave (alterations), 393A Clinton St (delicatessen), 26 Remsen Ave (alterations), 124 Grove St (3-story 6-unit multi-family), 229 Baldwin Rd (print shop), 89 Grove St (2-family residence — basement storage only). Adjourned: 23 Commander Ave (eliminate egress door to basement).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>7 approvals · 1 adjournment</span></div>
+</div>
+
+<!-- PB NOV 17 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">November 17, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Cases approved: 23 Commander Ave (single-family house), 73 High St (alteration + retail store), 175 Fulton Ave (interior alterations), 130 S. Franklin St (addition to space), 60 N. Franklin St (retail store).</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>5 approvals</span></div>
+</div>
+
+<!-- PB DEC 15 -->
+<div class="meeting-card planning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">December 15, 2025</span><span class="meeting-type">Regular Meeting · Planning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Case 1312: 58 Remsen Ave — single-family home approved. Walker excused himself mid-meeting. <strong>SEQRA Review — Case 1301 (257 Main St) — Negative Declaration issued:</strong> Board finds no significant adverse environmental impacts from the 7-story mixed-use building. Project fully cleared for development as of Dec 15.</span></div>
+  </div>
+  <div class="total-bar planning-bar"><span>Cases approved</span><span>1 approval + SEQRA Negative Declaration for 257 Main St</span></div>
+</div>
+
+<!-- ===== ZONING BOARD ===== -->
+<div class="section-title">Zoning Board of Appeals</div>
+
+<!-- ZBA JAN 2 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">January 2, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Present: Oppenheimer (Chair), Brathwaite, Gresham, Mathematics. Lucas ABSENT. Case 2143 (adult care, 69 James A. Garner Way) — adjourned to Feb 6. Case 2144 (22-unit senior apt, 178 S. Franklin) — adjourned to Mar 6. Case 2092 (35 Perry St additions) — approved for 6-month building permit extension. Case 2145 (188 Princeton St 2nd story) — approved with conditions. Case 2146 (warehouse 101-105 Westbury Blvd) — adjourned. Case 2152 (65 Maplewood Ave mother/daughter) — Type II, set for Apr 3.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>2 approvals · 3 adjournments · 1 Type II classification</span></div>
+</div>
+
+<!-- ZBA FEB 6 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">February 6, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Brathwaite ABSENT. Case 2143 (adult care, 69 James A. Garner Way) — <strong>DENIED.</strong> Case 2146 (warehouse 101-105 Westbury Blvd) — adjourned to Mar 6. Case 2148 (Citibank wall sign, 31 Main St) — approved. Case 2134 (162 Hamilton Rd subdivision/construction) — <strong>DENIED.</strong> Case 2147 (124 Grove St 6-unit multi-family) — adjourned. Cases 2153 (130 Marvin Ave 49-unit apt) and 2154 (403 Jerusalem Ave residential) — Type II, set for Apr 3.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>1 approval · 2 denials · 2 adjournments · 2 classifications</span></div>
+</div>
+
+<!-- ZBA MAR 6 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">March 6, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Full board present. Case 2144 (178 S. Franklin 22-unit senior apt) — adjourned to May 1. Case 2146 (101-105 Westbury Blvd warehouse) — <strong>APPROVED</strong> (Brathwaite NAY). Case 2150 (4 Mead St fence) — denied after procedural confusion (motion to deny initially failed, vacated, then re-voted and passed 3-2). Case 2151 (4 Kane Ave finished basement) — approved with conditions. Case 2147 (124 Grove St 6-unit) — approved with conditions (Mathematics NAY). Case 2149 (485 Fulton Ave one-family conversion) — denied.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>3 approvals · 2 denials · 1 adjournment</span></div>
+</div>
+
+<!-- ZBA APR 3 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">April 3, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Full board present. Case 2135 (Verizon Wireless, 107 James LL Burrell Ave) — approved for 6-month building permit extension. Case 2154 (403 Jerusalem Ave) — approved. Case 2152 (65 Maplewood Ave mother/daughter) — <strong>DENIED.</strong> Case 2153 (130 Marvin Ave 49-unit apt) — <strong>DENIED</strong> with community opposition (6 speakers opposed). Cases 2155 (Ross Dress for Less sign), 2156 (Trinity Opulence event space) — Type II, set for May 1. Case 2158 (20 James LL Burrell Ave 2-family) — Type II, set for Jun 5.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>2 approvals · 2 denials · 3 classifications</span></div>
+</div>
+
+<!-- ZBA MAY 1 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">May 1, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Gresham ABSENT. Case 2144 (178 S. Franklin — revised to 8-unit) — adjourned to Jun 5. Case 2155 (HVCA LLC sign) — approved (Brathwaite NAY). Case 2156 (Trinity Opulence event space) — adjourned to Jun 5. Case 2157 (16 Laurel Ave single-family) — approved. Cases 2159 (85 S. Franklin 15-unit), 2160 (Bennett Ave 2-family), 2161 (28 Seabury mother/daughter) — classified and placed on future calendars.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>2 approvals · 2 adjournments · 3 classifications</span></div>
+</div>
+
+<!-- ZBA JUN 5 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">June 5, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Full board present. Extensions approved: 102 Fairview Blvd (6-month), 306 Fulton Ave Living Faith Church (6-month). Cases approved: 2156 (Trinity Opulence event space, 273 Fulton), 2158 (20 James LL Burrell Ave 2-family with conditions), 2144 (178 S. Franklin 8-unit — approved with conditions; Brathwaite NAY), 2159 (85 S. Franklin 15-unit — approved; Mathematics NAY). Cases classified: 2162 (89 Grove St 2-family), 2163 (28 Weir St garage conversion), 2164 (Noah Burroughs — 274 Rhodes Ave mother/daughter).</span></div>
+  </div>
+  <div class="item-row" style="padding: 4px 16px 8px; font-size:0.82rem; font-family: 'Helvetica Neue', Arial, sans-serif; color:#7a0000;">
+    <strong>FLAG:</strong> Trustee Noah Burroughs filed Case #2164 for his own property (274 Rhodes Ave) to convert to mother/daughter. No conflict-of-interest recusal by the BOT was noted in the record.
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>6 approvals · 3 classifications · 2 extensions</span></div>
+</div>
+
+<!-- ZBA JUL 3 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">July 3, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Gresham ABSENT. Case 2161 (28 Seabury mother/daughter) — adjourned to Sep 4. Case 2041 (226 Clinton St senior/standard apts) — 1-year building permit extension approved. Case 2160 (Bennett Ave 2-family) — <strong>motion to approve FAILED 2-2</strong> (Mathematics + Lucas NAY; Brathwaite + Oppenheimer AYE; needed majority). Case 2162 (89 Grove St 2-family) — approved. Case 2163 (28 Weir St garage conversion) — <strong>DENIED</strong> with community opposition (9 speakers opposed). Case 2164 (<strong>Noah Burroughs</strong>, 274 Rhodes Ave mother/daughter) — <strong>APPROVED with conditions</strong> (2 speakers opposed, Burroughs absent from meeting).</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>3 approvals · 1 denial · 1 failed vote · 1 adjournment</span></div>
+</div>
+
+<!-- ZBA SEP 4 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">September 4, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Acting Chairwoman Lucas presiding. Oppenheimer + Mathematics ABSENT. Case 2084 (517 S. Franklin alterations/addition) — 6-month extension. Case 2161 (28 Seabury mother/daughter) — approved. Case 2165 (352 Fulton Ave medical use) — approved. Case 2167 (76-78 James LL Burrell finished basement) — adjourned to Oct 2. Case 2166 (49 Lewis Pl 2nd story addition) — <strong>DENIED.</strong> New cases classified: 2168 (NYU Langone 175 Fulton — medical), 2169 (120 Jean Ave enclosed breezeway), 25-0100 (130 S. Franklin auto body) — all set for Oct 2.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>3 approvals · 1 denial · 1 adjournment · 3 classifications</span></div>
+</div>
+
+<!-- ZBA OCT 2 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">October 2, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Full board present. Case 2167 (76-78 James LL Burrell finished basement) — adjourned to Nov 6. Case 2169 (120 Jean Ave breezeway) — approved (Brathwaite NAY). Case 2168 (NYU Langone 175 Fulton) — approved. Case 25-0100 (130 S. Franklin auto body) — approved. Cases 25-0185 (Food Bazaar rear sign), 25-0409 (58 Remsen Ave reconstruction) — classified and set for Nov 6.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>3 approvals · 1 adjournment · 2 classifications</span></div>
+</div>
+
+<!-- ZBA NOV 6 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">November 6, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Full board present. Case 2167 (76-78 James LL Burrell finished basement) — approved with conditions (Mathematics NAY). Case 25-0185 (Food Bazaar rear sign) — adjourned to Dec 4. Case 25-0409 (58 Remsen Ave reconstruction) — approved. Case 25-0578 (86-110 Main St MRI facility) — unlisted action, EAF required, set for Dec 4. Cases 25-0559 (29 Elm Ave deck/garage) and 25-0847 (167 Cathedral Ave renovation) — Type II, set for Dec 4.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>2 approvals · 1 adjournment · 3 classifications</span></div>
+</div>
+
+<!-- ZBA DEC 4 -->
+<div class="meeting-card zoning">
+  <div class="meeting-header" onclick="toggle(this)">
+    <div><span class="meeting-date">December 4, 2025</span><span class="meeting-type">Regular Meeting · Zoning Board</span></div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="meeting-body open">
+    <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Gresham ABSENT. Case 25-0847 (167 Cathedral Ave) — adjourned to Jan 8, 2026. Case 25-0185 (Food Bazaar rear sign) — approved. Case 25-0559 (29 Elm Ave deck/garage) — approved. Case 25-0578 (106 Main St MRI facility) — approved. Case 25-0053 (93 Macdonald St roof over porch) — Type II, set for Jan 8, 2026.</span></div>
+  </div>
+  <div class="total-bar zoning-bar"><span>Cases</span><span>3 approvals · 1 adjournment · 1 classification</span></div>
+</div>
+
+<footer>
+  Village of Hempstead 2025 Meeting Minutes Summary — compiled from public minutes posted at <a href="https://www.villageofhempstead.org/AgendaCenter">villageofhempstead.org/AgendaCenter</a>. All dollar figures, vote records, and resolutions are sourced directly from posted minutes. This document is for informational and accountability purposes only. Compiled Aug 25, 2025.
+</footer>
+
+<script>
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  if (body.classList.contains('open')) {
+    body.classList.remove('open');
+    chevron.classList.remove('open');
+  } else {
+    body.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>

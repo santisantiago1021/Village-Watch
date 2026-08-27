@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hempstead Watch — Ezekiel 33:6</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #2e3d4f;
+  --navy-light: #3a4d62;
+  --red: #7a3b2e;
+  --green: #3d7068;
+  --purple: #5c4d7d;
+  --orange: #8b6f47;
+  --bg: #f5f3ed;
+  --card: #fffef8;
+  --text: #2a2520;
+  --muted: #7a7060;
+  --border: #d8d4c8;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ======= HEADER ======= */
+.site-header {
+  background: var(--navy);
+  color: white;
+  padding: 0;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 20px;
+}
+.site-header h1 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.site-header h1 span { color: #7fbfff; }
+.site-header .tagline {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 640px;
+}
+.header-nav {
+  background: var(--navy-light);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.header-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 10px 16px;
+  display: block;
+  transition: background 0.15s;
+}
+.nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.12); color: white; }
+.nav-divider { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+
+/* ======= MAIN LAYOUT ======= */
+.main-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+/* ======= ABOUT BOX ======= */
+.about-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--navy);
+  border-radius: 3px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.6;
+}
+.about-box strong { color: var(--navy); }
+.about-box a { color: var(--navy); }
+.update-badge {
+  display: inline-block;
+  background: #e4ecea;
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #c0ccc8;
+}
+
+/* ======= STATS BAR ======= */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 2px;
+}
+.stat-label {
+  font-size: 0.73rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ======= SECTION HEADERS ======= */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  margin-top: 32px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--navy);
+}
+.section-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.section-header .count {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ======= CONCERNS / KEY ISSUES ======= */
+.concerns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.concern-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: 3px;
+  padding: 16px;
+}
+.concern-card h3 {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.concern-card p {
+  font-size: 0.82rem;
+  color: #444;
+  line-height: 1.55;
+}
+.concern-card .concern-years {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+.concern-icon { flex-shrink: 0; }
+
+/* ======= YEAR TABS ======= */
+.year-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.year-tab {
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.year-tab.active, .year-tab:hover {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+.board-filter {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.board-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all 0.15s;
+  background: white;
+}
+.board-btn.bot { color: var(--navy); border-color: var(--navy); }
+.board-btn.bot.active, .board-btn.bot:hover { background: var(--navy); color: white; }
+.board-btn.planning { color: var(--green); border-color: var(--green); }
+.board-btn.planning.active, .board-btn.planning:hover { background: var(--green); color: white; }
+.board-btn.zoning { color: var(--purple); border-color: var(--purple); }
+.board-btn.zoning.active, .board-btn.zoning:hover { background: var(--purple); color: white; }
+
+/* ======= SEARCH ======= */
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+.search-input {
+  flex: 1;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  outline: none;
+  background: white;
+}
+.search-input:focus { border-color: var(--navy); box-shadow: 0 0 0 2px rgba(46,61,79,0.12); }
+.search-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ======= MEETING CARDS ======= */
+.meeting-list { }
+.meeting-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--navy);
+  border-radius: 3px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+.meeting-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.meeting-card.planning { border-left-color: var(--green); }
+.meeting-card.zoning { border-left-color: var(--purple); }
+
+.meeting-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+  gap: 12px;
+}
+.meeting-header:hover { background: #f5f2ec; }
+.meeting-meta { flex: 1; min-width: 0; }
+.meeting-date { font-size: 0.92rem; font-weight: 700; color: var(--navy); }
+.meeting-card.planning .meeting-date { color: var(--green); }
+.meeting-card.zoning .meeting-date { color: var(--purple); }
+.meeting-type { font-size: 0.73rem; color: var(--muted); margin-top: 1px; }
+.meeting-badges { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; }
+.badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.badge-money   { background: #f0e8d8; color: #6b4820; }
+.badge-settle  { background: #f0e8d8; color: #6b4820; border: 1px solid #c8a870; }
+.badge-flag    { background: #ede0dc; color: #7a3b2e; }
+.badge-policy  { background: #d8e8ec; color: #2e4d5c; }
+.badge-staff   { background: #d8ece8; color: #2d5a52; }
+.badge-infra   { background: #e4dff0; color: #4a3d6a; }
+.badge-exec    { background: #e8e4dc; color: #5a5040; }
+.chevron { color: var(--muted); font-size: 0.75rem; transition: transform 0.2s; flex-shrink: 0; }
+.chevron.open { transform: rotate(180deg); }
+
+.meeting-body { display: none; border-top: 1px solid #f0f0f0; }
+.meeting-body.open { display: block; }
+
+.meeting-summary {
+  padding: 12px 16px;
+  font-size: 0.84rem;
+  color: #444;
+  line-height: 1.6;
+  background: #faf8f4;
+  border-bottom: 1px solid #f0f0f0;
+}
+.meeting-summary strong { color: var(--text); }
+
+.item-list { padding: 4px 0; }
+.item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 16px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.item-row:last-child { border-bottom: none; }
+.item-tag { flex-shrink: 0; margin-top: 1px; }
+.tag {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.tag-money   { background: #f0e8d8; color: #6b4820; }
+.tag-settle  { background: #f0e8d8; color: #6b4820; border: 1px solid #c8a870; }
+.tag-flag    { background: #ede0dc; color: #7a3b2e; }
+.tag-policy  { background: #d8e8ec; color: #2e4d5c; }
+.tag-staff   { background: #d8ece8; color: #2d5a52; }
+.tag-infra   { background: #e4dff0; color: #4a3d6a; }
+.tag-exec    { background: #e8e4dc; color: #5a5040; }
+.item-text { flex: 1; color: #333; }
+.item-text .amt { font-weight: 700; color: #6b4820; }
+.item-text .flag-text { color: #7a3b2e; }
+
+.meeting-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.85);
+  padding: 5px 16px;
+  font-size: 0.72rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.meeting-card.planning .meeting-footer { background: var(--green); }
+.meeting-card.zoning .meeting-footer { background: var(--purple); }
+.source-link { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.68rem; }
+.source-link:hover { color: white; text-decoration: underline; }
+
+/* ======= LEGEND ======= */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
+
+/* ======= NO RESULTS ======= */
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: none;
+}
+
+/* ======= FOOTER ======= */
+.site-footer {
+  margin-top: 48px;
+  background: var(--navy);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.75rem;
+  padding: 24px;
+  line-height: 1.7;
+  text-align: center;
+}
+.site-footer a { color: rgba(255,255,255,0.8); }
+
+/* ======= AI DISCLOSURE BANNER ======= */
+.ai-banner {
+  background: #f5ede0;
+  border-bottom: 2px solid #c8a870;
+  padding: 10px 24px;
+  font-size: 0.78rem;
+  color: #5a4030;
+  text-align: center;
+  line-height: 1.5;
+}
+.ai-banner a { color: #6b4820; font-weight: 600; }
+.ai-banner strong { color: #6b4820; }
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 640px) {
+  .site-header h1 { font-size: 1.3rem; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .concerns-grid { grid-template-columns: 1fr; }
+  .year-tabs { flex-direction: column; align-items: flex-start; }
+  .board-filter { margin-left: 0; }
+  .meeting-badges { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="ai-banner">
+  ⚠️ <strong>AI-assisted summary — verify before relying on any specific fact.</strong> This site was compiled using an AI (Claude) that read the official Village meeting minutes and extracted key items. Every figure and vote listed here is sourced from those documents, but AI can misread, omit, or mischaracterize content. Always check the <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank">original source documents ↗</a> before citing or acting on anything here. Each meeting card links directly to the Village's Agenda Center for that board and year.
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <h1>Hempstead <span>Watch</span></h1>
+    <p class="tagline">"But if the watchman sees the sword coming and does not blow the trumpet to warn the people... I will hold the watchman accountable." — <em>Ezekiel 33:6</em></p>
+  </div>
+  <nav class="header-nav">
+    <div class="header-nav-inner">
+      <a href="#about" class="nav-link">About</a>
+      <span class="nav-divider">·</span>
+      <a href="#concerns" class="nav-link">Key Issues</a>
+      <span class="nav-divider">·</span>
+      <a href="#meetings" class="nav-link">Meeting Records</a>
+      <span class="nav-divider">·</span>
+      <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank" class="nav-link">Source Documents ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main class="main-inner">
+
+  <!-- ABOUT -->
+  <div class="about-box" id="about">
+    <div class="update-badge">Last updated: August 2026</div>
+    <p>This site compiles and summarizes the official meeting minutes posted by the <strong>Village of Hempstead</strong> at <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank">villageofhempstead.org/AgendaCenter</a>. Every fact, vote, dollar figure, and name is drawn from those public documents. Coverage spans <strong>2025–2026</strong>, across three boards: the Board of Trustees (BOT), the Planning Board, and the Zoning Board of Appeals (ZBA).</p>
+    <p style="margin-top:8px;"><strong>How this works:</strong> Meeting minutes are read and summarized by an AI (Claude), which extracts key items — votes, payments, contracts, and transparency concerns. AI can make mistakes. Items marked <span class="tag tag-flag" style="display:inline;">FLAG</span> mean a resolution was missing information in the original document (no dollar amount, no party name, etc.) — that is an objective observation. Everything else should be verified against the original minutes before being cited or acted on.</p>
+    <p style="margin-top:10px;font-size:0.82rem;">
+      <strong>Source documents by board and year:</strong><br>
+      <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Board of Trustees — 2025 ↗</a> &nbsp;·&nbsp;
+      <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Board of Trustees — 2026 ↗</a> &nbsp;·&nbsp;
+      <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=3&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Planning Board — 2025 ↗</a> &nbsp;·&nbsp;
+      <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=3&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Planning Board — 2026 ↗</a> &nbsp;·&nbsp;
+      <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=5&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Zoning Board — 2025 ↗</a> &nbsp;·&nbsp;
+      <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=5&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Zoning Board — 2026 ↗</a>
+    </p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-number">77</span>
+      <span class="stat-label">Meetings reviewed</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">$517K+</span>
+      <span class="stat-label">Tax refunds confirmed<br><span style="font-size:0.65rem;font-weight:400;color:#999">2025–2026 (disclosed amounts only)</span></span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">$25M</span>
+      <span class="stat-label">Bonds authorized<br><span style="font-size:0.65rem;font-weight:400;color:#999">2025–2026</span></span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">14+</span>
+      <span class="stat-label">Undisclosed post-exec settlements<br><span style="font-size:0.65rem;font-weight:400;color:#999">2025–2026</span></span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">27+</span>
+      <span class="stat-label">Residency waivers granted<br><span style="font-size:0.65rem;font-weight:400;color:#999">2025–2026</span></span>
+    </div>
+  </div>
+
+  <!-- KEY CONCERNS -->
+  <div class="section-header" id="concerns">
+    <h2>Recurring Issues Worth Knowing About</h2>
+    <span class="count">Patterns across 2025–2026</span>
+  </div>
+
+  <div class="concerns-grid">
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">💰</span>Property at 1 Helen Keller Way — no price ever disclosed</h3>
+      <p>In January 2025 the Village authorized a <strong>$10 million bond</strong> for "acquisition of real property" — no property named. Six weeks later, they voted to buy 1 Helen Keller Way — no purchase price stated. Engineering and renovation contracts followed throughout 2025-2026, also without disclosed amounts. The public record still contains no figure for what this building cost.</p>
+      <p class="concern-years">2025: Jan 7 (bond), Feb 18 (purchase). 2026: multiple engineering contracts.</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">🔒</span>Litigation settled in secret — every month</h3>
+      <p>After nearly every closed-door executive session, the Board votes to approve "pending litigation" settlements. In 2025, at least <strong>8 separate matters</strong> were approved this way. In 2026, at least 7 more. None include the other party's name, the case description, or the dollar amount. The Village Attorney's authority to settle cases without Board approval at all was also raised from $5,000 to $15,000 in October 2025.</p>
+      <p class="concern-years">Confirmed in: Mar 4, Apr 15, May 6, Jun 17, Jul 1, Oct 7 (2025); Feb 17, May 19, Aug 3, Aug 18 (2026).</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">📉</span>Tax settlements reduce the Village's revenue — repeatedly</h3>
+      <p>Property owners who believe their assessments are too high can challenge them in court. The Village settles many of these cases with a cash refund <em>and</em> a locked-in lower assessment for up to 3 future years — permanently reducing what those properties pay. Confirmed refunds: at least <strong>$145,900 in 2025</strong> and <strong>$146,300+ in 2026</strong>, with ongoing assessment cuts on top.</p>
+      <p class="concern-years">Tax refunds appear at nearly every BOT meeting both years.</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">🏗️</span>Consultants hired repeatedly, amounts often missing</h3>
+      <p>Several firms receive repeated contracts without competitive rebids and without disclosed amounts: Laberge Group (at least $165K+ in addenda in 2025 alone, plus undisclosed amounts), H2M Architects (8+ scopes in 2025, most without amounts), Prioleau Development Group ($10,000/month confirmed in 2026, original 2025 contract had no amount), Greenberg Traurig LLP (lobbying, no amount), Davidoff Hutcher &amp; Citron (lobbying, no amount).</p>
+      <p class="concern-years">Ongoing across 2025–2026.</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">🏠</span>Two large apartment buildings approved downtown</h3>
+      <p>The Planning Board approved two significant mixed-use developments in 2025: <strong>16 Cooper St</strong> (5 stories, approved July 21) and <strong>257 Main St</strong> (7 stories, approved September 15 with 10% attainable housing requirement, final SEQRA clearance December 15). Both are the largest private development approvals of the year.</p>
+      <p class="concern-years">2025: Planning Board Jul 21, Sep 15, Dec 15.</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">🗳️</span>Good Cause Eviction failed — but it was close</h3>
+      <p>A local law that would have given Hempstead renters stronger protections against evictions failed on November 3, 2025 by a 2-3 vote. Trustees Burroughs and Whitaker voted yes; Deputy Mayor Daniels, Trustee Carter, and Mayor Hobbs voted no. This is the clearest ideological split in the 2025-2026 record.</p>
+      <p class="concern-years">2025: Nov 3 BOT meeting.</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">📷</span>Flock Safety surveillance — no price ever disclosed</h3>
+      <p>The Village signed a contract with Flock Safety in January 2025 for license plate reader cameras — no amount stated. In June 2025 they added a gunshot detection system — no amount stated. In February 2026 they extended the contract, claiming savings of "over $1 million" but still disclosing no contract value or total spend.</p>
+      <p class="concern-years">2025: Jan 21, Jun 17. 2026: Feb 3.</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">⚖️</span>Trustee Burroughs — conflict of interest question</h3>
+      <p>In June 2025, Trustee Noah Burroughs filed a Zoning Board application for his own property at 274 Rhodes Ave (Case #2164) to convert it to a mother/daughter unit. The ZBA approved it in July 2025. The public record does not indicate whether the Board of Trustees took any conflict-of-interest step. Burroughs also sat out several key votes where he appeared to have a personal interest.</p>
+      <p class="concern-years">2025: ZBA Jun 5 (filed), Jul 3 (approved). BOT Oct 21, Nov 18 (Burroughs abstained on own pension records).</p>
+    </div>
+
+    <div class="concern-card">
+      <h3><span class="concern-icon">🏊</span>$30M Mirschel Park + $17.4M Kennedy Pool — limited cost disclosure</h3>
+      <p>Two major capital projects are underway. The Mirschel Park Community Center (total project cost: $30M; $15M bond authorized June 2025; $675K + $900K in grants applied for) and the Kennedy Memorial Park Pool renovation ($17.4M in contracts awarded August 2026). Engineering, design, and management costs for both projects are largely undisclosed across dozens of contract resolutions.</p>
+      <p class="concern-years">2025: Jun 17, Jul 15. 2026: Jan–Aug (multiple resolutions).</p>
+    </div>
+
+  </div>
+
+  <!-- MEETING RECORDS -->
+  <div class="section-header" id="meetings" style="margin-top: 40px;">
+    <h2>Meeting Records</h2>
+    <span class="count" id="shown-count">showing all meetings</span>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="tag tag-money">PAYMENT</span> Financial commitment</div>
+    <div class="legend-item"><span class="tag tag-settle">SETTLEMENT</span> Tax or litigation payout</div>
+    <div class="legend-item"><span class="tag tag-flag">FLAG</span> Missing info or transparency concern</div>
+    <div class="legend-item"><span class="tag tag-policy">POLICY</span> Law, vote, or governance action</div>
+    <div class="legend-item"><span class="tag tag-staff">PERSONNEL</span> Hire, promotion, or salary</div>
+    <div class="legend-item"><span class="tag tag-infra">CONTRACT</span> Capital or infrastructure contract</div>
+    <div class="legend-item"><span class="tag tag-exec">EXEC SESSION</span> Closed session</div>
+  </div>
+
+  <div class="search-row">
+    <input type="text" class="search-input" id="search" placeholder="Search meetings, addresses, names, dollar amounts…" oninput="applyFilters()">
+  </div>
+
+  <div class="year-tabs">
+    <button class="year-tab active" onclick="setYear('all', this)">All years</button>
+    <button class="year-tab" onclick="setYear('2026', this)">2026</button>
+    <button class="year-tab" onclick="setYear('2025', this)">2025</button>
+    <div class="board-filter">
+      <button class="board-btn bot active" onclick="toggleBoard('bot', this)">Board of Trustees</button>
+      <button class="board-btn planning active" onclick="toggleBoard('planning', this)">Planning Board</button>
+      <button class="board-btn zoning active" onclick="toggleBoard('zoning', this)">Zoning Board</button>
+    </div>
+  </div>
+
+  <div class="meeting-list" id="meeting-list">
+
+    <!-- ============================================================ -->
+    <!-- 2026 BOT MEETINGS -->
+    <!-- ============================================================ -->
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="settle flag money policy staff infra">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">August 18, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-infra">CONTRACT</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-exec">EXEC</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Kennedy Park Pool renovation contracts awarded ($17.4M+). One undisclosed exec-session litigation settlement. Burroughs ABSTAINED on the general contractor vote without explanation.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Kennedy Pool — Renu Contracting &amp; Restoration: <span class="amt">$10,482,994</span> (general). Burroughs ABSTAINED.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Kennedy Pool — mechanical, electrical, plumbing sub-contracts totaling approx. <span class="amt">$6.9M</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session (litigation) → 1 matter approved. No amount or party disclosed.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Workers' Comp settlement: <span class="amt">$108,235.22</span> — no recipient named.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Aug 18, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="money staff infra flag exec">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">July 21, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-money">PAYMENT</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-infra">CONTRACT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">McBride Consulting hired for capital project management at $7,500/month — no competitive bid, no scope. Workers' comp settlement approved without naming the recipient.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">McBride Consulting LLC — Capital Projects management: <span class="amt">$7,500/month</span>. No competitive bid referenced; no scope or deliverables stated.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Workers' Comp settlement approved — no amount, no recipient named.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Multiple engineering and infrastructure contracts (details in source document).</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jul 21, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="money staff infra flag exec settle">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">July 7, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-money">PAYMENT</span>
+          <span class="badge badge-infra">CONTRACT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Prioleau Development Group confirmed at $10,000/month for capital project oversight — original 2025 contract had no disclosed amount. Burroughs attending via Zoom.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Pri-Oleau Development Group LLC — Capital Projects owner representative: <span class="amt">$10,000/month</span>. Original Jun 2025 contract did not disclose any rate. No competitive bid referenced.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Kennedy Park Pool: additional engineering contracts (no disclosed amounts).</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jul 7, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="flag policy cannabis exec">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">June 18 &amp; 22, 2026</div>
+          <div class="meeting-type">Public Hearings — Cannabis Opt-In · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-policy">POLICY</span>
+          <span class="badge badge-flag">FLAG</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Two public hearings on reversing the Village's opt-out from NY adult-use cannabis retail (Local Law 1 of 2022). Both hearings closed with no recorded public testimony in the minutes.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Village partially opted back into NY adult-use cannabis retail program — reversing Local Law 1 of 2022. Ordinance vote not yet confirmed in posted minutes.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Neither public hearing recorded any public comment in the minutes — notable given the significance of the policy change.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jun 18 &amp; 22, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="money flag staff policy settle">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">June 2, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-settle">SETTLEMENT</span>
+          <span class="badge badge-staff">PERSONNEL</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Alexis Grocery Deli 6 Corp license reinstated after 4 adjournments — vote had only 3 trustees listed. Peninsula Realty tax settlement: $13,000.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Peninsula Realty Associates LLC — tax refund <span class="amt">$13,000</span>. Assessment locked for 3 years.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Alexis Grocery Deli 6 Corp (76 N. Franklin) — license reinstated via stipulation. Only 3 trustees listed in AYES — may be clerical error or actual 3-2 split.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Multiple seasonal and part-time hires; residency waivers: Natividad Calderon-Valle, Mayra Vargas.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jun 2, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="exec flag money staff infra">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">May 19, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-exec">EXEC</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-money">PAYMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Two more undisclosed post-exec session litigation matters approved. Workers' Comp settlement approved without naming recipient. Burroughs attending via Zoom.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session (litigation) → Matter 1 + Matter 2 approved. No amounts, no party names.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Workers' Comp settlement approved — amount not disclosed, recipient not named.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">7 seasonal lifeguard residency waivers; Karandeep Singh + Justin Elder new hires.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · May 19, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="money staff infra flag policy">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">April 21, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-money">PAYMENT</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-staff">PERSONNEL</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Workers' Comp settlement: no amount, no recipient. Multiple infrastructure contracts for Kennedy Pool and Mirschel Park with limited disclosure.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Workers' Comp settlement approved — no amount, no recipient. Third consecutive instance of this pattern.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">H2M contracts for Kennedy Pool and Mirschel Park (amounts partially disclosed in some resolutions).</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Apr 21, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="policy staff infra money">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">April 6, 2026</div>
+          <div class="meeting-type">Annual Organizational Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-policy">POLICY</span>
+          <span class="badge badge-staff">PERSONNEL</span>
+          <span class="badge badge-money">PAYMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Annual appointments reconfirmed. Elected officials' salaries set. Board composition unchanged from 2025 election results.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Board composition: Mayor Hobbs, Deputy Mayor Daniels, Trustees Burroughs, Carter, Whitaker. Vaughan as Village Justice.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Mayor: <span class="amt">$170,000/yr</span>. Deputy Mayor: <span class="amt">$47,000/yr</span>. Trustees: <span class="amt">$36,000/yr each</span>. Nawrocki Smith — auditors: <span class="amt">$68,000</span>.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Apr 6, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="infra flag money">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">March 17, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees — Burroughs ABSENT</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-infra">CONTRACT</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-settle">SETTLEMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">H2M master planning for Village Hall relocation to Helen Keller Building: $90,000. Crescent Consulting 5-year referral contract: $519,936 — no competitive bid mentioned. Tax refund: $3,300.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">H2M — Master planning for Village Hall relocation to 1 Helen Keller Way: <span class="amt">$90,000</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Crescent Consulting Company — Jobs and Business Referral Center + Local Contracting Referral Center, 5 years: <span class="amt">$519,936</span>. No competitive bid referenced; no performance metrics stated.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Go Equities Group LLC (389 Peninsula Blvd) — tax refund <span class="amt">$3,300</span>. Assessment locked at $16,000 through 2028/29.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Mar 17, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="infra flag money policy staff">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">March 3, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-money">PAYMENT</span>
+          <span class="badge badge-infra">CONTRACT</span>
+          <span class="badge badge-flag">FLAG</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">$4.2M water infrastructure contract (Bove Industries). Three H2M contracts without disclosed amounts. Greenberg Traurig hired as lobbyists — no amount, no scope. Yummy Tummies license denial reversed.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">BID #4 Water Infrastructure Phase 0 — Bove Industries: <span class="amt">$4,218,948</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">IMEG — DOZ Architectural Review Standards: <span class="amt">$56,500</span>. DOZ Parking Study: <span class="amt">$56,090</span>. B-D Zoning Map: <span class="amt">$83,500</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Three H2M Architects contracts (Helen Keller 3rd floor, Police Shooting Range due diligence, Cooper Square Garage structural assessment) — <strong>none include dollar amounts.</strong></span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Greenberg Traurig LLP — lobbying services. <strong>No amount, no scope, no term disclosed.</strong></span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Yummy Tummies (153 Baldwin Rd) — prior license denial reversed via stipulation.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Mar 3, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="exec money staff flag policy">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">February 17, 2026</div>
+          <div class="meeting-type">Regular Meeting + Assessment Hearing · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-exec">EXEC</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-money">PAYMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Two undisclosed litigation matters approved after executive session. DWI grant: $125,000. Tax levy approved to exceed state cap.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">Executive session 6:49–7:24 PM → Matter 1 + Matter 2 approved unanimously. No amounts, no party names, no descriptions.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Nassau County DWI Enforcement Grant: <span class="amt">$25,000/yr × 5 years = $125,000</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Tax levy approved in excess of GML §3-c limit (state property tax cap override).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Residency waivers: Christopher Reid (Tax Cashier <span class="amt">$55,551/yr</span>), Joselyn Ortiz-Reyes (Bilingual Typist-Clerk <span class="amt">$52,905/yr</span>). Promotions: Shvonne Gaskin (<span class="amt">$80,731/yr</span>); Leann Wright-Shands (<span class="amt">$66,753/yr</span>).</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Feb 17, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="flag money policy staff">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">February 3, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-money">PAYMENT</span>
+          <span class="badge badge-policy">POLICY</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Flock Safety surveillance extended — resolution claims $1M+ savings but discloses no contract value. $5,000 appraisal authorized for potential 330 Fulton Ave acquisition — no follow-up purchase vote ever appeared.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">FLOCK Safety (license plate readers) contract extended. Claims savings "over $1M" — no contract value, term, or total spend disclosed.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">330 Fulton Ave appraisal: <span class="amt">$5,000</span> for "contemplated acquisition." No follow-up purchase resolution appeared in any subsequent 2026 meeting.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">DHS/SHSP Cybersecurity Grant: <span class="amt">$50,000</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Tax sale authorized May 7, 2026 at Village Hall for all 2025/26 unpaid taxes.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Feb 3, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="settle flag money policy staff">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">January 20, 2026</div>
+          <div class="meeting-type">Public Hearing + Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-settle">SETTLEMENT</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-money">PAYMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Largest single tax settlement on record: 24-26 Main St LLC — $130,000 refund, assessment locked at $70,000 through 2028/29. Mirschel Park grant application: up to $900,000. Burroughs absent for public hearing; arrived via Zoom at 6:45 PM.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">24-26 Main Street LLC — tax refund <span class="amt">$130,000</span> (2020/21–2025/26), 3 installments. Assessment locked at <span class="amt">$70,000</span> through 2028/29.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">OPRHP Municipal Parks grant application for Mirschel Park — up to <span class="amt">$900,000</span> requested (10% local match required).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">229-235 SF LLC hardship exemption from subdivision moratorium — DENIED (4-1; Carter voted to grant exemption).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Olive Dove Design Collective addendum for 1 Helen Keller Way — no amount disclosed.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jan 20, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2026" data-board="bot" data-tags="settle flag money policy staff infra">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">January 6, 2026</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-settle">SETTLEMENT</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-money">PAYMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Three Arrows Hempstead: $50,000 tax refund. Hempstead Preservation LLC received a $500,000 contribution pledge — no follow-up activity found in any subsequent meeting. Flock Safety and Laberge contracts without disclosed amounts.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Three Arrows Hempstead LLC (40 Main St) — tax refund <span class="amt">$50,000</span>, 2 installments. Assessment locked at $130,000 through 2027/28.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Hempstead Preservation LLC — Village Services agreement (no amount) + $500,000 Contribution Pledge for Mirschel Park approved same meeting. No follow-up in subsequent meetings.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">BJA Bulletproof Vest Partnership Grant: <span class="amt">$26,727</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Laberge Group — Mirschel Park improvements (roof, lighting, IT/AV/security). No amount stated.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jan 6, 2026</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2026&endDate=12%2F31%2F2026" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 2025 BOT — SELECTED KEY MEETINGS -->
+    <!-- ============================================================ -->
+
+    <div class="meeting-card" data-year="2025" data-board="bot" data-tags="policy staff">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">December 16, 2025</div>
+          <div class="meeting-type">Public Hearing + Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-policy">POLICY</span>
+          <span class="badge badge-flag">FLAG</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">73B Main St hardship exemption failed 2-2-1 (Burroughs abstained). Hempstead Convenience Store 2 Corp license revocation upheld — one of the few cases where a revocation actually stuck. Burroughs arrived 22 minutes late.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">73B Main St hardship exemption (convenience store moratorium) — <strong>FAILED 2-2-1.</strong> Carter + Whitaker YES; Daniels + Mayor Hobbs NO; Burroughs ABSTAINED. Motion failed — needed majority.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Hempstead Convenience Store 2 Corp (134 N. Franklin) — license revocation UPHELD unanimously. One of the few 2025 license actions where revocation was not reversed.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Brett Wilson — MEO Trainee: <span class="amt">$61,536/yr</span>. Waqar Dass — accounting contractor extended through Jun 30, 2026 at <span class="amt">$42/hr</span> (up from $40/hr).</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Dec 16, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2025" data-board="bot" data-tags="policy settle flag">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">November 3, 2025</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-policy">POLICY</span>
+          <span class="badge badge-settle">SETTLEMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Good Cause Eviction law FAILED 2-3. Burroughs + Whitaker voted YES; Daniels, Carter, Mayor Hobbs voted NO. This is the clearest ideological split in 2025-2026.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Local Law #5 of 2025 (Good Cause Eviction) — FAILED 2-3.</strong> AYES: Burroughs, Whitaker. NOES: Daniels, Carter, Mayor Hobbs. Tenant protection law defeated; Mayor and Deputy Mayor voted against.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">316-318 Fulton LG LLC — tax refund <span class="amt">$28,000</span> (2017/18–2018/19).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Robert Engel + Julianne Pulizzi — new hires with residency waivers. Engel: <span class="amt">$80,047/yr</span>. Pulizzi: <span class="amt">$54,011/yr</span>.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Nov 3, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2025" data-board="bot" data-tags="flag money infra exec policy">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">September 16, 2025</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-infra">CONTRACT</span>
+          <span class="badge badge-money">PAYMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Only 3 of 5 trustees present (Daniels and Carter excused). Davidoff Hutcher &amp; Citron hired as lobbyists — no amount disclosed — approved 3-0. IMEG sewer contract expanded by $78,000. AAAA Nassau tow license reversed after 4+ months.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">All items passed 3-0 with only Burroughs, Whitaker, and Mayor Hobbs present. Daniels and Carter were excused.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Davidoff Hutcher &amp; Citron LLP — governmental relations / lobbying services. <strong>No amount, no scope, no term disclosed.</strong> Approved 3-0.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">IMEG Phase I Sewer/Water — contract amendment: <span class="amt">+$78,000</span> (total now $1,723,249).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">AAAA Nassau Inc. tow license suspension REVERSED after 4+ month process across 5+ hearings.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Sep 16, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2025" data-board="bot" data-tags="policy money infra flag exec staff">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">June 17, 2025</div>
+          <div class="meeting-type">Public Hearing + Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-money">PAYMENT</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-infra">CONTRACT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">$15M bond authorized for Mirschel Park Community Center (total project cost stated as $30M). Prioleau Development Group hired as owner rep — no amount stated (later revealed at $10K/month). Flock Safety gunshot detection added. New Purchasing Policy adopted.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text"><strong>$15,000,000 BOND</strong> authorized for Mirschel Park Community Center. Total project cost stated: <span class="amt">$30,000,000</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Pri-Oleau Development Group — owner representative for all Village construction projects. <strong>No amount disclosed.</strong> Later revealed as $10,000/month (Jul 2026 BOT).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Flock Safety — new Gunshot Detection agreement added. No amount disclosed. Original license plate reader contract also had no disclosed amount.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-exec">EXEC SESSION</span></span><span class="item-text">1 litigation matter approved. Burroughs ABSTAINED — the only trustee to abstain on an exec session approval in 2025.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">New Village Purchasing Policy adopted. Towing Schedule of Fees approved (Daniels voted NO on fees).</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jun 17, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2025" data-board="bot" data-tags="flag policy money">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">April 1, 2025</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-policy">POLICY</span>
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-infra">CONTRACT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Second consultant hired to study Village-to-City transformation — again 3-2 (same split as Feb 18). Laberge addendum: $126,500 for Mirschel Park. Four business license suspensions reversed by stipulation on same day.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>CGR (Center for Governmental Research) — hired to study "City of Hempstead" transformation, 3-2.</strong> AYES: Daniels, Burroughs, Hobbs. NOES: Griffith, Boone. Second consultant on same question; no amount disclosed for either study.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Laberge Group — Mirschel Park expanded design addendum: <span class="amt">+$126,500</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Reyna's Kitchen, Rafa Deli, JER Deli, Luis Lopez &amp; Sons / Chase Collision — all license suspensions reversed via stipulation on the same date.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Apr 1, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2025" data-board="bot" data-tags="policy flag settle infra staff money">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">February 18, 2025</div>
+          <div class="meeting-type">Grievance Day + Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-policy">POLICY</span>
+          <span class="badge badge-settle">SETTLEMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">1 Helen Keller Way purchase authorized — no price disclosed. Laberge study for City of Hempstead transformation: 3-2 vote (first of two such votes). Tax refund: $3,800. $309,700 water main repair awarded.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text"><strong>1 Helen Keller Way: purchase contract authorized — unanimous vote, no purchase price stated.</strong> Bond for "acquisition of real property" was authorized Jan 7 ($10M) without naming this property. Combined, no public dollar figure exists at either step.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Laberge Group: study "transforming into City of Hempstead" — <strong>3-2 vote.</strong> AYES: Daniels, Burroughs, Hobbs. NOES: Griffith, Boone. No amount disclosed.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">535 S. Franklin St LLC — tax refund <span class="amt">$3,800</span>. Assessment locked at $14,200 for 3 years.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-infra">CONTRACT</span></span><span class="item-text">Orchid Sewer &amp; Water — water main repair/replacement: <span class="amt">$309,700</span>.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Feb 18, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card" data-year="2025" data-board="bot" data-tags="flag money policy staff">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">January 7, 2025</div>
+          <div class="meeting-type">Regular Meeting · Board of Trustees</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-money">PAYMENT</span>
+          <span class="badge badge-settle">SETTLEMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">$10M bond authorized for "acquisition of real property" — no property named. Laberge addendum: $7,500. Madonna Holdings tax refund: $3,000. First meeting of 2025.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text"><strong>$10,000,000 BOND</strong> authorized for "acquisition of real property" — no property named. Likely 1 Helen Keller Way (purchased Feb 18 with no price disclosed). Full acquisition cost remains unknown.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-settle">SETTLEMENT</span></span><span class="item-text">Madonna Holdings LLC — tax refund <span class="amt">$3,000</span> (519/531 Fulton Ave, 2018/19–2024/25).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-money">PAYMENT</span></span><span class="item-text">Laberge Engineering — Mirschel Park addendum: <span class="amt">+$7,500</span>.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-staff">PERSONNEL</span></span><span class="item-text">Waqar Dass — temp accounting contractor: <span class="amt">$40/hr</span> through Dec 31, 2025.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer"><span>BOT · Jan 7, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 2025-2026 PLANNING BOARD — KEY MEETINGS -->
+    <!-- ============================================================ -->
+
+    <div class="meeting-card planning" data-year="2025" data-board="planning" data-tags="policy">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">September 15, 2025</div>
+          <div class="meeting-type">Regular Meeting + Public Hearing · Planning Board</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-policy">MAJOR DEVELOPMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">257 Main St (7-story mixed-use apartment building) approved with conditions including 10% attainable housing requirement. One of the largest private development approvals of 2025.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Case 1301 — 257 Main St: 7-story mixed-use apartment building APPROVED</strong> with conditions: tandem parking notices to renters, deliveries via Old Franklin only, minimum <strong>10% attainable housing</strong>. Walker recused.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">220-228 S. Franklin St subdivision approved (Case 7-2025). 8 routine site/alteration approvals.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer planning-bar"><span>Planning Board · Sep 15, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=3&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="meeting-card planning" data-year="2025" data-board="planning" data-tags="policy">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">July 21, 2025</div>
+          <div class="meeting-type">Regular Meeting + Public Hearings · Planning Board</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-policy">MAJOR DEVELOPMENT</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">16 Cooper St (5-story multi-use apartment) approved. Cooper Street designated Type C Street. 31 Cornwall Lane denied — insufficient living space for 9-bedroom proposal.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text"><strong>Case 1300 — 16 Cooper St: 5-story multi-use apartment building APPROVED.</strong> Board also designated Cooper Street as a Type C Street (effective Jul 21).</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">Case 1297 — 31 Cornwall Lane: <strong>DENIED</strong> — insufficient living space relative to 9-bedroom proposal.</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer planning-bar"><span>Planning Board · Jul 21, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=3&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 2025 ZONING BOARD — KEY MEETINGS -->
+    <!-- ============================================================ -->
+
+    <div class="meeting-card zoning" data-year="2025" data-board="zoning" data-tags="flag policy">
+      <div class="meeting-header" onclick="toggle(this)">
+        <div class="meeting-meta">
+          <div class="meeting-date">July 3, 2025</div>
+          <div class="meeting-type">Regular Meeting · Zoning Board of Appeals</div>
+        </div>
+        <div class="meeting-badges">
+          <span class="badge badge-flag">FLAG</span>
+          <span class="badge badge-policy">POLICY</span>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-summary">Trustee Burroughs' own variance (274 Rhodes Ave, Case #2164) approved — he filed in June while serving on the Board of Trustees. No conflict-of-interest step was noted in the BOT record. 28 Weir St garage conversion denied after 9 community speakers opposed.</div>
+        <div class="item-list">
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Case 2164 — <strong>Noah Burroughs</strong> (Trustee), 274 Rhodes Ave — mother/daughter conversion: <strong>APPROVED with conditions.</strong> 2 speakers opposed. Burroughs absent from the ZBA meeting — he does not sit on ZBA, but no conflict-of-interest step appeared in the BOT record when he filed.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">28 Weir St garage conversion — <strong>DENIED</strong> with 9 community speakers opposed. 89 Grove St 2-family — approved. Bennett Ave 2-family — motion to approve FAILED 2-2 (tied vote, motion fails).</span></div>
+        </div>
+      </div>
+      <div class="meeting-footer" style="background: var(--purple);"><span>Zoning Board · Jul 3, 2025</span><a class="source-link" href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=5&startDate=01%2F01%2F2025&endDate=12%2F31%2F2025" target="_blank">Verify at Village Agenda Center ↗</a></div>
+    </div>
+
+    <div class="no-results" id="no-results">No meetings match your search or filters.</div>
+
+  </div><!-- /meeting-list -->
+
+  <p style="font-size:0.78rem; color: var(--muted); margin-top:16px; text-align:center;">
+    This page shows selected key meetings. For complete records, download the <a href="hempstead_2026_minutes_summary_2.html" style="color:var(--navy);">2026 detailed file</a> or <a href="hempstead_2025_minutes_summary.html" style="color:var(--navy);">2025 detailed file</a>, or visit the <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank" style="color:var(--navy);">Village Agenda Center</a>.
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  <p><strong style="color:rgba(255,255,255,0.9);">AI Disclosure:</strong> This site was created with the assistance of an AI (Claude by Anthropic), which read and summarized official Village meeting minutes. AI summaries can contain errors — omissions, misreadings, or mischaracterizations. Nothing here should be cited or relied upon without first verifying against the original source documents. This is a tool for helping residents find things worth looking into, not a substitute for the official record.</p>
+  <p style="margin-top:10px;">All original records are public documents posted by the Village of Hempstead at <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank">villageofhempstead.org/AgendaCenter</a>. Coverage: January 2025 – August 2026. Updated periodically as new minutes are posted.</p>
+  <p style="margin-top:10px; font-size:0.7rem; color:rgba(255,255,255,0.4);">This is an independent transparency project, not affiliated with or endorsed by the Village of Hempstead.</p>
+</footer>
+
+<script>
+let activeYear = 'all';
+let activeBoards = { bot: true, planning: true, zoning: true };
+
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  if (body.classList.contains('open')) {
+    body.classList.remove('open');
+    chevron.classList.remove('open');
+  } else {
+    body.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+
+function setYear(year, btn) {
+  activeYear = year;
+  document.querySelectorAll('.year-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function toggleBoard(board, btn) {
+  activeBoards[board] = !activeBoards[board];
+  btn.classList.toggle('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.meeting-card[data-year]');
+  let shown = 0;
+
+  cards.forEach(card => {
+    const year = card.dataset.year;
+    const board = card.dataset.board;
+    const text = card.textContent.toLowerCase();
+
+    const yearOk = activeYear === 'all' || year === activeYear;
+    const boardOk = activeBoards[board];
+    const searchOk = !q || text.includes(q);
+
+    if (yearOk && boardOk && searchOk) {
+      card.style.display = '';
+      shown++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  const countEl = document.getElementById('shown-count');
+  const noResults = document.getElementById('no-results');
+  countEl.textContent = shown === cards.length ? 'showing all meetings' : `showing ${shown} of ${cards.length} meetings`;
+  noResults.style.display = shown === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>
