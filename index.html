@@ -567,6 +567,293 @@ body {
 .budget-flag-badge.amber { background: #f0e8d8; color: #6b4820; border: 1px solid #c8a870; }
 .budget-flag-badge.blue { background: #d8e8ec; color: #2e4d5c; }
 
+
+/* ================================================================
+   POLICE BUDGET BREAKDOWN
+   ================================================================ */
+.police-breakdown-card {
+  background: var(--card);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin-top: 20px;
+}
+.police-breakdown-title {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+.police-breakdown-note {
+  font-size: 0.78rem;
+  color: var(--text);
+  margin-top: 14px;
+  padding: 11px 14px;
+  background: rgba(122,59,46,0.07);
+  border-left: 3px solid var(--red);
+  border-radius: 4px;
+  line-height: 1.55;
+}
+
+/* ================================================================
+   SALARY COMPARISON
+   ================================================================ */
+.salary-section { margin-top: 40px; }
+.salary-intro {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 10px 0 16px;
+}
+.salary-ladder {
+  background: var(--card);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-radius: 10px;
+  padding: 22px 24px;
+}
+.salary-ladder-title {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+.salary-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.salary-bar-label {
+  width: 210px;
+  font-size: 0.8rem;
+  color: var(--text);
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+.salary-bar-label .label-sub {
+  font-size: 0.68rem;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+.salary-bar-label .label-sub a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.salary-bar-label .label-sub a:hover { text-decoration: underline; }
+.salary-bar-track {
+  flex: 1;
+  height: 26px;
+  background: rgba(46,61,79,0.07);
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 80px;
+}
+.salary-bar-fill { height: 100%; border-radius: 4px; }
+.salary-bar-amount {
+  width: 78px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: right;
+  flex-shrink: 0;
+}
+.salary-divider {
+  border: none;
+  border-top: 1px dashed rgba(46,61,79,0.15);
+  margin: 6px 0 16px;
+}
+.salary-note {
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-top: 14px;
+  line-height: 1.55;
+}
+.salary-trustees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.salary-trustee-card {
+  background: rgba(46,61,79,0.04);
+  border: 1px solid rgba(46,61,79,0.1);
+  border-radius: 8px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.salary-trustee-role {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 5px;
+}
+.salary-trustee-amount {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.salary-trustee-name {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.salary-office-flag {
+  background: rgba(122,59,46,0.06);
+  border-left: 3px solid var(--red);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-top: 14px;
+  line-height: 1.55;
+}
+
+/* ================================================================
+   SURVEILLANCE SECTION
+   ================================================================ */
+.surveillance-section { margin-top: 40px; }
+.surveillance-intro {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 10px 0 16px;
+}
+.surveillance-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.surveillance-stat-card {
+  background: var(--card);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-radius: 10px;
+  padding: 16px 18px;
+  text-align: center;
+}
+.surv-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.1;
+}
+.surv-stat-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 5px;
+  line-height: 1.4;
+}
+.surv-stat-label a { color: var(--muted); text-decoration: none; }
+.surv-stat-label a:hover { text-decoration: underline; }
+.surveillance-timeline {
+  background: var(--card);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.timeline-title {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.timeline-row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+  font-size: 0.82rem;
+}
+.timeline-date {
+  width: 115px;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--muted);
+  padding-top: 1px;
+}
+.timeline-event {
+  flex: 1;
+  color: var(--text);
+  line-height: 1.5;
+  border-left: 2px solid rgba(46,61,79,0.15);
+  padding-left: 12px;
+}
+.timeline-event strong { color: var(--navy); }
+.surv-flag-card {
+  background: var(--card);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.surv-flag-title {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.surv-flag-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.82rem;
+  align-items: flex-start;
+}
+.surv-flag-badge {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-top: 2px;
+}
+.surv-flag-badge.red { background: rgba(122,59,46,0.12); color: var(--red); }
+.surv-flag-badge.amber { background: rgba(201,136,58,0.12); color: #8b6020; }
+
+/* ================================================================
+   OPEN QUESTIONS SECTION
+   ================================================================ */
+.questions-section { margin-top: 40px; }
+.questions-intro {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 10px 0 16px;
+}
+.question-card {
+  background: var(--card);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-left: 4px solid #c9883a;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.question-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 9px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.question-card p {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.58;
+  margin-bottom: 6px;
+}
+.question-card .q-source {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.question-card .q-source a { color: var(--navy); }
 </style>
 </head>
 <body>
@@ -589,6 +876,12 @@ body {
       <a href="#budget" class="nav-link">Budget</a>
       <span class="nav-divider">·</span>
       <a href="#meetings" class="nav-link">Meeting Records</a>
+      <span class="nav-divider">·</span>
+      <a href="#salaries" class="nav-link">Salaries</a>
+      <span class="nav-divider">·</span>
+      <a href="#surveillance" class="nav-link">Surveillance</a>
+      <span class="nav-divider">·</span>
+      <a href="#questions" class="nav-link">Open Questions</a>
       <span class="nav-divider">·</span>
       <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank" class="nav-link">Source Documents ↗</a>
       <div style="margin-left:auto; display:flex; align-items:center; gap:4px; padding: 0 8px;">
@@ -748,9 +1041,14 @@ body {
     <div class="budget-chart-card">
       <div class="budget-chart-title">General Fund — spending by category (FY 2026&ndash;27)</div>
       <div class="budget-bar-row">
-        <div class="budget-bar-label">Public Safety</div>
-        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:33%;background:#2e3d4f"></div></div>
-        <div class="budget-bar-pct">$33.3M &nbsp;33%</div>
+        <div class="budget-bar-label">Police</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:28.6%;background:#2e3d4f"></div></div>
+        <div class="budget-bar-pct">$28.96M &nbsp;29%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Other Public Safety</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:4.3%;background:#4a6680"></div></div>
+        <div class="budget-bar-pct">$4.37M &nbsp;&nbsp;&nbsp;&nbsp;4%</div>
       </div>
       <div class="budget-bar-row">
         <div class="budget-bar-label">Employee Benefits</div>
@@ -783,10 +1081,68 @@ body {
         <div class="budget-bar-pct">$2.2M &nbsp;&nbsp;&nbsp;2%</div>
       </div>
       <p style="font-size:0.72rem;color:var(--muted);margin-top:12px;">
-        <strong>Public Safety</strong> = Police $28.9M + Fire $1.6M + Fire Alarm $869K + Safety Inspection $1.5M + Parking $396K. 
-        <strong>Employee Benefits</strong> = Health insurance $16M + Police pension $7.8M + State retirement $2.7M + Social Security $2.6M + other.
+        <strong>Police</strong> = FY2027 adopted budget for dept 3120 (officer salaries, overtime, operations, equipment). <strong>Other Public Safety</strong> = Fire $1.6M + Fire Alarm $869K + Safety Inspection $1.5M + Parking $396K.
+        <strong>Employee Benefits</strong> = Health insurance $16M + Police pension $7.8M + State retirement $2.7M + Social Security $2.6M + other (all in Undistributed, not split by department).
         <strong>Interfund Transfers</strong> = Debt service $5.3M + Insurance Fund $3.6M + Library $3.6M.
       </p>
+    </div>
+
+    <div class="police-breakdown-card">
+      <div class="police-breakdown-title">🚔 Where Does the $28.96M Police Budget Go? (FY 2026–27)</div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Officer Salaries (3120-102)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:59.4%;background:#2e3d4f"></div></div>
+        <div class="budget-bar-pct">$17.2M &nbsp;59%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Overtime (3120-115)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:10.4%;background:#7a3b2e"></div></div>
+        <div class="budget-bar-pct">$3.0M &nbsp;10%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Admin Salaries (3120-101)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:4.1%;background:#3a4d62"></div></div>
+        <div class="budget-bar-pct">$1.2M &nbsp;&nbsp;&nbsp;4%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Holiday Pay (3120-116)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:3.6%;background:#3a4d62"></div></div>
+        <div class="budget-bar-pct">$1.04M &nbsp;&nbsp;4%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Neighborhood Aides (3120-121)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:3.0%;background:#3d7068"></div></div>
+        <div class="budget-bar-pct">$874K &nbsp;&nbsp;&nbsp;3%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Systems Maintenance (3120-402)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:3.0%;background:#5c4d7d"></div></div>
+        <div class="budget-bar-pct">$856K &nbsp;&nbsp;&nbsp;3%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Night Differential (3120-113)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:2.4%;background:#8b6f47"></div></div>
+        <div class="budget-bar-pct">$699K &nbsp;&nbsp;&nbsp;2%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Other Services (3120-497)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:4.5%;background:#8b6f47"></div></div>
+        <div class="budget-bar-pct">$1.3M &nbsp;&nbsp;&nbsp;5%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Termination Benefits (3120-160)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:1.7%;background:#a09070"></div></div>
+        <div class="budget-bar-pct">$500K &nbsp;&nbsp;&nbsp;2%</div>
+      </div>
+      <div class="budget-bar-row">
+        <div class="budget-bar-label">Other line items (est.)</div>
+        <div class="budget-bar-track"><div class="budget-bar-fill" style="width:8.3%;background:#c0b090"></div></div>
+        <div class="budget-bar-pct">$2.3M &nbsp;&nbsp;&nbsp;8%</div>
+      </div>
+      <div class="police-breakdown-note">
+        <strong>Important — this is not the full picture.</strong> The $28.96M above covers direct police department expenses only. Employee benefits (health insurance, pension, Social Security) for police are budgeted under "Undistributed" (code 9000) and not broken out by department. The village-wide benefit pool is $30.7M. Police, as the largest department by headcount (132+ sworn officers), likely account for $12–14M of that — bringing the true all-in cost of policing to an estimated <strong>$40–42M per year</strong>, or roughly 40% of the total General Fund.
+        <br><br>Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank" style="color:var(--navy);">FY 2026–27 Adopted Budget, Dept 3120 line items ↗</a>
+      </div>
     </div>
 
     <div class="budget-flags-card">
@@ -815,6 +1171,230 @@ body {
 
   </div>
 
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SALARY COMPARISON -->
+  <!-- ============================================================ -->
+  <div class="section-header salary-section" id="salaries">
+    <h2>Leadership Salaries</h2>
+    <span class="count">Village officials vs. comparable offices — with sources</span>
+  </div>
+
+  <p class="salary-intro">
+    The Mayor's personal salary was set at <strong>$170,000/year</strong> at the April 6, 2026 annual organizational meeting — the same figure confirmed in prior years. For context, here is where that sits relative to other elected executives.
+  </p>
+
+  <div class="salary-ladder">
+    <div class="salary-ladder-title">Annual salary comparison — elected executives</div>
+
+    <div class="salary-bar-row">
+      <div class="salary-bar-label">
+        Hempstead Village Mayor
+        <span class="label-sub">William Hobbs &middot; <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=04%2F01%2F2026&endDate=04%2F30%2F2026" target="_blank">Source: Apr 6, 2026 BOT org. meeting ↗</a></span>
+      </div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:42.5%;background:#2e3d4f;outline:2px solid var(--red);outline-offset:1px;border-radius:4px;"></div></div>
+      <div class="salary-bar-amount">$170,000</div>
+    </div>
+
+    <div class="salary-bar-row">
+      <div class="salary-bar-label">
+        Nassau County Executive
+        <span class="label-sub">Bruce Blakeman &middot; <a href="https://www.nassaucountyny.gov/2070/County-Executive" target="_blank">Source: Nassau County ↗</a> &middot; Serves 1.3M residents</span>
+      </div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:59%;background:#3d7068"></div></div>
+      <div class="salary-bar-amount">$236,000</div>
+    </div>
+
+    <div class="salary-bar-row">
+      <div class="salary-bar-label">
+        New York State Governor
+        <span class="label-sub">Kathy Hochul &middot; <a href="https://www.nysenate.gov/legislation/laws/PBO/169" target="_blank">Source: NY Public Officers Law §169 ↗</a> &middot; Serves 20M residents</span>
+      </div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:62.6%;background:#3d7068"></div></div>
+      <div class="salary-bar-amount">$250,314</div>
+    </div>
+
+    <div class="salary-bar-row">
+      <div class="salary-bar-label">
+        New York City Mayor
+        <span class="label-sub">Eric Adams &middot; <a href="https://www.nyccivicengagement.nyc.gov" target="_blank">Source: NYC Charter §24 ↗</a> &middot; Serves 8.3M residents</span>
+      </div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:64.7%;background:#3d7068"></div></div>
+      <div class="salary-bar-amount">$258,750</div>
+    </div>
+
+    <div class="salary-bar-row">
+      <div class="salary-bar-label">
+        President of the United States
+        <span class="label-sub"><a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title3-section102&num=0&edition=prelim" target="_blank">Source: 3 U.S.C. §102 ↗</a> &middot; Serves 335M residents</span>
+      </div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;background:#5c4d7d"></div></div>
+      <div class="salary-bar-amount">$400,000</div>
+    </div>
+
+    <hr class="salary-divider">
+
+    <p class="salary-note">
+      The Mayor's <strong>personal salary of $170,000</strong> is lower than all of the above comparisons. What is notable is the <strong>total cost of the Mayor's Office</strong>: the FY2027 budget for department 1210 is <strong>$799,553</strong>, which covers the mayor, his staff, and <strong>$200,000 in "Publicity" spending</strong> — an item not present in comparable offices of this scale. For a village of approximately 55,000 residents, that is $14.54 per resident just for the mayor's office operations.
+      <br><br>
+      Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank">FY 2026–27 Adopted Budget, Dept 1210 ↗</a>
+    </p>
+  </div>
+
+  <div class="salary-ladder" style="margin-top:16px;">
+    <div class="salary-ladder-title">Board of Trustees — elected official salaries (FY 2026–27)</div>
+    <div class="salary-trustees-grid">
+      <div class="salary-trustee-card">
+        <div class="salary-trustee-role">Mayor</div>
+        <div class="salary-trustee-amount">$170,000</div>
+        <div class="salary-trustee-name">William Hobbs</div>
+      </div>
+      <div class="salary-trustee-card">
+        <div class="salary-trustee-role">Deputy Mayor</div>
+        <div class="salary-trustee-amount">$47,000</div>
+        <div class="salary-trustee-name">Evelyn Daniels</div>
+      </div>
+      <div class="salary-trustee-card">
+        <div class="salary-trustee-role">Trustee</div>
+        <div class="salary-trustee-amount">$36,000</div>
+        <div class="salary-trustee-name">Noah Burroughs</div>
+      </div>
+      <div class="salary-trustee-card">
+        <div class="salary-trustee-role">Trustee</div>
+        <div class="salary-trustee-amount">$36,000</div>
+        <div class="salary-trustee-name">Waylyn Carter</div>
+      </div>
+      <div class="salary-trustee-card">
+        <div class="salary-trustee-role">Trustee</div>
+        <div class="salary-trustee-amount">$36,000</div>
+        <div class="salary-trustee-name">Leotha Whitaker</div>
+      </div>
+    </div>
+    <div class="salary-office-flag" style="margin-top:14px;">
+      <strong>Mayor's Office "Publicity" line — $200,000/year:</strong> The FY2027 budget for dept 1210 includes $200,000 in "Publicity" (object 486). FY2026 actual spend was $167,492; FY2025 actual was $200,000. No comparable village government budget reviewed includes a discretionary publicity line of this size. No competitive bid or scope of work appears in the meeting minutes for this spending.
+      <br><span style="font-size:0.72rem;color:var(--muted);margin-top:5px;display:block;">Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank">FY 2026–27 Adopted Budget, line 1210-486 ↗</a></span>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SURVEILLANCE SECTION -->
+  <!-- ============================================================ -->
+  <div class="section-header surveillance-section" id="surveillance">
+    <h2>Surveillance Infrastructure</h2>
+    <span class="count">Flock Safety license plate readers, drones, and gunshot detection — no price ever disclosed</span>
+  </div>
+
+  <div class="surveillance-stats-row">
+    <div class="surveillance-stat-card">
+      <div class="surv-stat-number">47</div>
+      <div class="surv-stat-label">Documented Flock Safety cameras<br><a href="https://www.deflock.me" target="_blank">Source: DeFlock/MyTownView tracker ↗</a><br>(Flock transparency portal + FOIA data)</div>
+    </div>
+    <div class="surveillance-stat-card">
+      <div class="surv-stat-number">#7</div>
+      <div class="surv-stat-label">Most surveilled in NY State<br>Behind NYC MTA, Binghamton Univ,<br>Buffalo, Yonkers, Albany, Syracuse</div>
+    </div>
+    <div class="surveillance-stat-card">
+      <div class="surv-stat-number">$0</div>
+      <div class="surv-stat-label">Contract value ever disclosed<br>to the public in any BOT vote<br>across 3 separate resolutions</div>
+    </div>
+    <div class="surveillance-stat-card">
+      <div class="surv-stat-number">$50K</div>
+      <div class="surv-stat-label">DHS Cybersecurity Grant<br>approved same meeting as<br>Flock contract extension (Feb 3, 2026)</div>
+    </div>
+  </div>
+
+  <div class="surveillance-timeline">
+    <div class="timeline-title">Timeline of surveillance expansion</div>
+    <div class="timeline-row">
+      <div class="timeline-date">Jan 2025</div>
+      <div class="timeline-event"><strong>Flock Safety LPR contract signed.</strong> License plate reader cameras installed throughout the village. BOT resolution approved unanimously. <strong>No dollar amount disclosed.</strong></div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-date">Jun 2025</div>
+      <div class="timeline-event"><strong>Gunshot detection added.</strong> ShotSpotter-style acoustic sensors added to the Flock contract. Again, <strong>no dollar amount disclosed</strong> in meeting minutes.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-date">Jun 2025</div>
+      <div class="timeline-event"><strong>Drone-as-First-Responder (DFR) program launched.</strong> Hempstead became the <strong>first village in New York State</strong> to operate a drone-as-first-responder program. Drones operate autonomously, responding to 911 calls ahead of officers. The Aerodome-operated program has its own live community dashboard.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-date">Feb 3, 2026</div>
+      <div class="timeline-event"><strong>Flock contract extended.</strong> BOT resolution states the extension represents savings of <strong>"over $1 million."</strong> No original contract value disclosed. No new contract value disclosed. No term length disclosed. The "attached safe city proposal schedule" referenced in the resolution is not a public document. Vote: unanimous.</div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-date">Feb 3, 2026</div>
+      <div class="timeline-event"><strong>DHS/SHSP Cybersecurity Grant — $50,000</strong> approved same meeting. Grant period: Oct 1, 2025 – Aug 31, 2026. Purpose not specified in the public resolution beyond "cybersecurity."</div>
+    </div>
+  </div>
+
+  <div class="surv-flag-card">
+    <div class="surv-flag-title">Transparency and accountability concerns</div>
+    <div class="surv-flag-row">
+      <span class="surv-flag-badge red">FLAG</span>
+      <span><strong>No contract value has ever been disclosed.</strong> Three separate BOT resolutions authorized Flock Safety spending across 2025–2026. None stated a dollar amount. The February 2026 resolution claimed "$1M+ savings" but named no baseline figure — so the claim cannot be evaluated.</span>
+    </div>
+    <div class="surv-flag-row">
+      <span class="surv-flag-badge red">FLAG</span>
+      <span><strong>Community camera program — no BOT vote found.</strong> Flock Safety operates a program asking residents to register their own private cameras with police at <a href="https://refer.flocksafety.com/community/hempstead-village-safe" target="_blank" style="color:var(--navy);">refer.flocksafety.com/community/hempstead-village-safe ↗</a>. A review of all 77 meeting records found no BOT vote authorizing or disclosing this program to the public.</span>
+    </div>
+    <div class="surv-flag-row">
+      <span class="surv-flag-badge amber">NOTE</span>
+      <span><strong>The "Systems Maintenance" line jumped from $0 to $856,195 (FY2027).</strong> In FY2026 this line had no budget; the actual through February 2026 was $683. The FY2027 budget allocates $856,195 — an 856x increase with no explanation in any public meeting. This is the line most likely to contain surveillance technology contract costs that have never been disclosed separately.</span>
+    </div>
+    <div class="surv-flag-row">
+      <span class="surv-flag-badge amber">NOTE</span>
+      <span><strong>No policy governing use of surveillance data has appeared in any meeting record.</strong> No data retention policy, no civilian oversight, no criteria for when footage or plate data can be accessed or shared with other agencies was discussed at any of the 77 meetings reviewed.</span>
+    </div>
+    <p style="font-size:0.72rem;color:var(--muted);margin-top:12px;">
+      Camera count source: <a href="https://www.deflock.me" target="_blank">DeFlock/MyTownView community tracker ↗</a> (aggregates Flock transparency portal, EFF Atlas, and FOIA responses). BOT resolution sources: <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank">Village Agenda Center ↗</a> — Jan 21, 2025; Jun 17, 2025; Feb 3, 2026.
+    </p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- OPEN QUESTIONS SECTION -->
+  <!-- ============================================================ -->
+  <div class="section-header questions-section" id="questions">
+    <h2>Open Questions</h2>
+    <span class="count">Things the village has never addressed — worth asking</span>
+  </div>
+
+  <p class="questions-intro">
+    These are not accusations. They are questions any taxpayer should be able to get a straight answer to — and hasn't. Each one is grounded in a specific line item or documented fact from the public record.
+  </p>
+
+  <div class="question-card">
+    <h3>🔴 Ammunition budget: nearly doubled, with almost nothing spent — why?</h3>
+    <p>The FY2026 ammunition budget (line 3120-430) was <strong>$13,129</strong>. Actual spending through February 15, 2026 — more than 8 months into the fiscal year — was <strong>$102</strong>. The FY2027 budget then <strong>jumps to $28,150</strong>, more than doubling the prior year allocation.</p>
+    <p>For a 132-officer department, mandatory annual qualification alone typically requires tens of thousands of rounds. If they spent $102 in 8.5 months, one of the following must be true: (a) qualification rounds were funded through another line or a federal supply program; (b) officers did not qualify on schedule; or (c) the prior budgets were inflated. None of these has been explained publicly. The budget increase to $28,150 — following a year where essentially nothing was spent — raises an additional question about what the money is actually budgeted for.</p>
+    <div class="q-source">Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank">FY 2026–27 Adopted Budget, line 3120-430 (Ammunition) ↗</a></div>
+  </div>
+
+  <div class="question-card">
+    <h3>🔴 Police overtime: $4.3M spent vs. $3.0M budgeted — every year</h3>
+    <p>In FY2026, the Village budgeted <strong>$3,000,000</strong> for police overtime and spent <strong>$4,289,632</strong> — 43% over budget. The FY2027 overtime budget is again set at <strong>$3,000,000</strong>. This pattern suggests the village is either intentionally underbudgeting overtime, or there is a structural issue driving perpetual overruns that has not been addressed.</p>
+    <p>Overtime overruns happened in the same period that Flock Safety cameras, gunshot detection, and a drone-as-first-responder program were added — all justified, at least in part, by efficiency and crime-reduction benefits. If those tools are working as claimed, why has overtime consistently exceeded budget?</p>
+    <div class="q-source">Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank">FY 2026–27 Adopted Budget, line 3120-115 (Overtime) ↗</a></div>
+  </div>
+
+  <div class="question-card">
+    <h3>🟡 Flock Safety: "over $1M in savings" — savings compared to what?</h3>
+    <p>The February 3, 2026 BOT resolution extending the Flock Safety contract states the extension will result in savings of <strong>"over $1 million."</strong> The original contract value was never publicly disclosed. The new contract value was never publicly disclosed. Without knowing the baseline cost, the savings claim is mathematically unverifiable.</p>
+    <p>The Village has had three separate votes touching the Flock Safety contract and has never stated in a public record how much the contract costs per year or in total.</p>
+    <div class="q-source">Source: BOT Minutes, <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=02%2F01%2F2026&endDate=02%2F28%2F2026" target="_blank">February 3, 2026 ↗</a></div>
+  </div>
+
+  <div class="question-card">
+    <h3>🟡 The "Systems Maintenance" line: $0 budgeted → $856,195 in one year</h3>
+    <p>Police dept line 3120-402 (Systems Maintenance) had <strong>no FY2026 budget allocation</strong>. Actual spend through February 2026 was <strong>$683</strong>. The FY2027 budget allocates <strong>$856,195</strong> for this same line. That is an increase of over $855,000 with no public explanation in any meeting record.</p>
+    <p>No BOT resolution, no agenda item, and no public discussion explaining what this line covers or why it is needed at this scale appeared in the 77 meeting records reviewed. Given the simultaneous expansion of Flock Safety's contract, this line is a natural place to ask questions.</p>
+    <div class="q-source">Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank">FY 2026–27 Adopted Budget, line 3120-402 ↗</a></div>
+  </div>
+
+  <div class="question-card">
+    <h3>🟡 1 Helen Keller Way — what did it cost?</h3>
+    <p>In January 2025, the Village authorized a <strong>$10 million bond</strong> for "acquisition of real property" — no property was named. In February 2025, they voted to purchase 1 Helen Keller Way — no price was stated. Renovation, engineering, design, and relocation contracts have been approved throughout 2025 and 2026, most without disclosed amounts. As of the August 2026 meeting record, the total cost of this acquisition and renovation remains unknown to the public.</p>
+    <div class="q-source">Source: BOT Minutes — Jan 7, 2025 (bond); Feb 18, 2025 (purchase); multiple 2025–2026 meetings (contracts)</div>
   </div>
 
   <!-- MEETING RECORDS -->
