@@ -854,6 +854,95 @@ body {
   margin-top: 8px;
 }
 .question-card .q-source a { color: var(--navy); }
+
+/* ================================================================
+   TAKE ACTION SECTION
+   ================================================================ */
+.action-section { margin-top: 40px; }
+.action-intro {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 10px 0 16px;
+}
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 640px) { .action-grid { grid-template-columns: 1fr; } }
+.action-card {
+  background: var(--card);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-radius: 10px;
+  padding: 20px;
+}
+.action-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.action-card p, .action-card ul {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.action-card ul { padding-left: 18px; }
+.action-card li { margin-bottom: 4px; }
+.action-card a { color: var(--navy); }
+.action-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.action-btn:hover { opacity: 0.85; }
+.foil-template {
+  background: rgba(46,61,79,0.04);
+  border: 1px solid rgba(46,61,79,0.12);
+  border-radius: 8px;
+  padding: 16px 18px;
+  font-size: 0.78rem;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: var(--text);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.action-network-card {
+  background: var(--card);
+  border: 2px solid rgba(46,61,79,0.15);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 0;
+}
+.action-network-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.action-network-placeholder {
+  background: rgba(46,61,79,0.04);
+  border: 1px dashed rgba(46,61,79,0.3);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
 </style>
 </head>
 <body>
@@ -882,6 +971,8 @@ body {
       <a href="#surveillance" class="nav-link">Surveillance</a>
       <span class="nav-divider">·</span>
       <a href="#questions" class="nav-link">Open Questions</a>
+      <span class="nav-divider">·</span>
+      <a href="#action" class="nav-link">Take Action</a>
       <span class="nav-divider">·</span>
       <a href="https://www.villageofhempstead.org/AgendaCenter" target="_blank" class="nav-link">Source Documents ↗</a>
       <div style="margin-left:auto; display:flex; align-items:center; gap:4px; padding: 0 8px;">
@@ -1167,6 +1258,10 @@ body {
         <span class="budget-flag-badge amber">CAPITAL</span>
         <span><strong>$47.4M in capital projects underway</strong> (Mirschel Park $30M + Kennedy Pool $17.4M). Most individual engineering, design, and management contracts were approved without disclosed amounts in the meeting minutes.</span>
       </div>
+      <div class="budget-flag-row">
+        <span class="budget-flag-badge red">TAX CAP</span>
+        <span><strong>State property tax cap override approved February 2026.</strong> New York's GML §3-c limits how much a municipality can raise its tax levy each year (generally 2% or inflation, whichever is lower). A 60% supermajority BOT vote can override it. The Village voted to exceed the cap at the February 17, 2026 meeting — meaning the FY2027 tax levy of $71.0M increased beyond what the state limit would allow without that override. The FY2027 levy is up from approximately $66M in FY2025 actuals. The budget has grown faster than the cap permits in recent years, with the override used as the workaround. <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=02%2F01%2F2026&endDate=02%2F28%2F2026" target="_blank" style="color:var(--navy);">Source: Feb 17, 2026 BOT meeting ↗</a></span>
+      </div>
     </div>
 
   </div>
@@ -1182,78 +1277,80 @@ body {
   </div>
 
   <p class="salary-intro">
-    The Mayor's personal salary was set at <strong>$170,000/year</strong> at the April 6, 2026 annual organizational meeting — the same figure confirmed in prior years. For context, here is where that sits relative to other elected executives.
+    The FY2027 adopted budget shows <strong>$425,053</strong> allocated for "Salaries &amp; Wages" in the Mayor's Office (dept 1210, line 101). This is the budget line covering the mayor and any direct office staff. The village has never publicly disclosed what the mayor's personal salary is as a separate line item — that breakdown would require a FOIL request. What we can verify from the budget is below.
   </p>
 
   <div class="salary-ladder">
-    <div class="salary-ladder-title">Annual salary comparison — elected executives</div>
-
-    <div class="salary-bar-row">
-      <div class="salary-bar-label">
-        Hempstead Village Mayor
-        <span class="label-sub">William Hobbs &middot; <a href="https://www.villageofhempstead.org/AgendaCenter/Search?term=&CIDs=2&startDate=04%2F01%2F2026&endDate=04%2F30%2F2026" target="_blank">Source: Apr 6, 2026 BOT org. meeting ↗</a></span>
-      </div>
-      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:42.5%;background:#2e3d4f;outline:2px solid var(--red);outline-offset:1px;border-radius:4px;"></div></div>
-      <div class="salary-bar-amount">$170,000</div>
-    </div>
+    <div class="salary-ladder-title">Mayor's Office salary budget vs. comparable elected officials' personal salaries</div>
+    <p style="font-size:0.76rem;color:var(--muted);margin-bottom:14px;">The $425,053 bar below represents the <em>total salary budget for the Mayor's Office</em> (including any staff). The other bars represent those officials' personal salaries. This is an apples-to-oranges comparison — noted here because the village has declined to disclose how the $425,053 breaks down.</p>
 
     <div class="salary-bar-row">
       <div class="salary-bar-label">
         Nassau County Executive
-        <span class="label-sub">Bruce Blakeman &middot; <a href="https://www.nassaucountyny.gov/2070/County-Executive" target="_blank">Source: Nassau County ↗</a> &middot; Serves 1.3M residents</span>
+        <span class="label-sub">Bruce Blakeman · personal salary · <a href="https://www.nassaucountyny.gov/2070/County-Executive" target="_blank">nassaucountyny.gov ↗</a> · serves 1.3M residents</span>
       </div>
-      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:59%;background:#3d7068"></div></div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:55.5%;background:#3d7068"></div></div>
       <div class="salary-bar-amount">$236,000</div>
     </div>
 
     <div class="salary-bar-row">
       <div class="salary-bar-label">
         New York State Governor
-        <span class="label-sub">Kathy Hochul &middot; <a href="https://www.nysenate.gov/legislation/laws/PBO/169" target="_blank">Source: NY Public Officers Law §169 ↗</a> &middot; Serves 20M residents</span>
+        <span class="label-sub">personal salary · <a href="https://www.nysenate.gov/legislation/laws/PBO/169" target="_blank">NY Public Officers Law §169 ↗</a> · serves 20M residents</span>
       </div>
-      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:62.6%;background:#3d7068"></div></div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:58.9%;background:#3d7068"></div></div>
       <div class="salary-bar-amount">$250,314</div>
     </div>
 
     <div class="salary-bar-row">
       <div class="salary-bar-label">
         New York City Mayor
-        <span class="label-sub">Eric Adams &middot; <a href="https://www.nyccivicengagement.nyc.gov" target="_blank">Source: NYC Charter §24 ↗</a> &middot; Serves 8.3M residents</span>
+        <span class="label-sub">personal salary · <a href="https://www.nyccivicengagement.nyc.gov" target="_blank">NYC Charter §24 ↗</a> · serves 8.3M residents</span>
       </div>
-      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:64.7%;background:#3d7068"></div></div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:60.9%;background:#3d7068"></div></div>
       <div class="salary-bar-amount">$258,750</div>
     </div>
 
     <div class="salary-bar-row">
       <div class="salary-bar-label">
         President of the United States
-        <span class="label-sub"><a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title3-section102&num=0&edition=prelim" target="_blank">Source: 3 U.S.C. §102 ↗</a> &middot; Serves 335M residents</span>
+        <span class="label-sub">personal salary · <a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title3-section102&num=0&edition=prelim" target="_blank">3 U.S.C. §102 ↗</a> · serves 335M residents</span>
       </div>
-      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;background:#5c4d7d"></div></div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:94.1%;background:#5c4d7d"></div></div>
       <div class="salary-bar-amount">$400,000</div>
+    </div>
+
+    <div class="salary-bar-row">
+      <div class="salary-bar-label">
+        Hempstead Mayor's Office
+        <span class="label-sub" style="color:var(--red);font-weight:600;">TOTAL salary budget, Mayor + staff · <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank" style="color:var(--red);">FY2027 Budget, line 1210-101 ↗</a> · serves ~55,000 residents</span>
+      </div>
+      <div class="salary-bar-track"><div class="salary-bar-fill" style="width:100%;background:#7a3b2e;outline:2px solid var(--red);outline-offset:1px;border-radius:4px;"></div></div>
+      <div class="salary-bar-amount" style="color:var(--red);">$425,053</div>
     </div>
 
     <hr class="salary-divider">
 
     <p class="salary-note">
-      The Mayor's <strong>personal salary of $170,000</strong> is lower than all of the above comparisons. What is notable is the <strong>total cost of the Mayor's Office</strong>: the FY2027 budget for department 1210 is <strong>$799,553</strong>, which covers the mayor, his staff, and <strong>$200,000 in "Publicity" spending</strong> — an item not present in comparable offices of this scale. For a village of approximately 55,000 residents, that is $14.54 per resident just for the mayor's office operations.
+      <strong>What we know for certain:</strong> The Mayor's Office "Salaries &amp; Wages" budget is <strong>$425,053</strong> — higher than the personal salaries of the County Executive, Governor, NYC Mayor, and President. The village has not publicly disclosed how this splits between the mayor's personal pay and any staff. The only other payroll line for the mayor's office is "Summer Help" at $5,000, suggesting minimal additional staff. A FOIL request for the mayor's specific compensation has not been filed as of this writing.
       <br><br>
-      Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank">FY 2026–27 Adopted Budget, Dept 1210 ↗</a>
+      The Mayor's Office total department budget (FY2027) is <strong>$799,553</strong>, which includes <strong>$200,000 in "Publicity"</strong> spending (line 1210-486) — FY2026 actual was $167,492, FY2025 actual was $200,000. No competitive bid or scope of work for this line appears in any meeting record reviewed.
     </p>
   </div>
 
   <div class="salary-ladder" style="margin-top:16px;">
-    <div class="salary-ladder-title">Board of Trustees — elected official salaries (FY 2026–27)</div>
+    <div class="salary-ladder-title">Board of Trustees — reported annual salaries (consistent with FY2027 budget, dept 1010)</div>
+    <p style="font-size:0.76rem;color:var(--muted);margin-bottom:14px;">The FY2027 budget for dept 1010 (Board of Trustees) allocates $157,052 for salaries. The figures below are consistent with that total. The specific salary resolution could not be located in the 2026 meeting records reviewed — a FOIL request for the formal salary schedule would confirm exact amounts.</p>
     <div class="salary-trustees-grid">
-      <div class="salary-trustee-card">
-        <div class="salary-trustee-role">Mayor</div>
-        <div class="salary-trustee-amount">$170,000</div>
-        <div class="salary-trustee-name">William Hobbs</div>
+      <div class="salary-trustee-card" style="border:1px solid rgba(122,59,46,0.3);">
+        <div class="salary-trustee-role">Mayor's Office</div>
+        <div class="salary-trustee-amount" style="color:var(--red);">$425,053</div>
+        <div class="salary-trustee-name">William Hobbs + staff<br><span style="font-size:0.65rem;">(total salary line, see above)</span></div>
       </div>
       <div class="salary-trustee-card">
         <div class="salary-trustee-role">Deputy Mayor</div>
         <div class="salary-trustee-amount">$47,000</div>
-        <div class="salary-trustee-name">Evelyn Daniels</div>
+        <div class="salary-trustee-name">Jeffery Daniels</div>
       </div>
       <div class="salary-trustee-card">
         <div class="salary-trustee-role">Trustee</div>
@@ -1272,7 +1369,7 @@ body {
       </div>
     </div>
     <div class="salary-office-flag" style="margin-top:14px;">
-      <strong>Mayor's Office "Publicity" line — $200,000/year:</strong> The FY2027 budget for dept 1210 includes $200,000 in "Publicity" (object 486). FY2026 actual spend was $167,492; FY2025 actual was $200,000. No comparable village government budget reviewed includes a discretionary publicity line of this size. No competitive bid or scope of work appears in the meeting minutes for this spending.
+      <strong>Mayor's Office "Publicity" line — $200,000/year:</strong> Object 486 in dept 1210 is listed as "Publicity." FY2026 actual spend: $167,492. FY2025 actual: $200,000. FY2027 budget: $200,000. No competitive bid, vendor name, or scope of services appears in any meeting record reviewed. It is unclear whether this covers advertising, public relations contracts, community outreach, or something else.
       <br><span style="font-size:0.72rem;color:var(--muted);margin-top:5px;display:block;">Source: <a href="https://www.villageofhempstead.org/ArchiveCenter/ViewFile/Item/109" target="_blank">FY 2026–27 Adopted Budget, line 1210-486 ↗</a></span>
     </div>
   </div>
@@ -1396,6 +1493,59 @@ body {
     <p>In January 2025, the Village authorized a <strong>$10 million bond</strong> for "acquisition of real property" — no property was named. In February 2025, they voted to purchase 1 Helen Keller Way — no price was stated. Renovation, engineering, design, and relocation contracts have been approved throughout 2025 and 2026, most without disclosed amounts. As of the August 2026 meeting record, the total cost of this acquisition and renovation remains unknown to the public.</p>
     <div class="q-source">Source: BOT Minutes — Jan 7, 2025 (bond); Feb 18, 2025 (purchase); multiple 2025–2026 meetings (contracts)</div>
   </div>
+
+  <!-- ============================================================ -->
+  <!-- TAKE ACTION -->
+  <!-- ============================================================ -->
+  <div class="section-header action-section" id="action">
+    <h2>Take Action</h2>
+    <span class="count">Contact the village, file a FOIL request, or send an email — here's how</span>
+  </div>
+
+  <p class="action-intro">
+    The most direct thing a resident can do is show up, call, or write. Below are the verified contact details for village officials, a ready-to-use FOIL request template, and a form where you can send an email directly to the village about the transparency concerns documented on this site.
+  </p>
+
+  <div class="action-grid">
+
+    <div class="action-card">
+      <h3>📞 Contact Village Officials</h3>
+      <ul>
+        <li><strong>Village Hall main line:</strong> <a href="tel:5164893400">(516) 489-3400</a></li>
+        <li><strong>Mayor's Office:</strong> (516) 489-3400 ext. for mayor's office</li>
+        <li><strong>Village Clerk (FOIL requests):</strong> Patricia Perez<br>99 James A. Garner Way, Hempstead, NY 11550</li>
+        <li><strong>BOT meetings:</strong> 1st &amp; 3rd Tuesday, 6:30 p.m., Village Hall</li>
+      </ul>
+      <p style="margin-top:10px;"><strong>Public comment</strong> is taken at the start of each Board of Trustees meeting. You do not need to register in advance — you can simply attend and speak.</p>
+      <a class="action-btn" href="https://www.villageofhempstead.org/AgendaCenter" target="_blank">See upcoming meetings ↗</a>
+    </div>
+
+    <div class="action-card">
+      <h3>📋 FOIL Request — Mayor's Salary</h3>
+      <p>Under New York's Freedom of Information Law (FOIL), you have a right to request government records. The village must respond within 5 business days (either with records or an acknowledgment with a timeline). Here is a ready-to-use template for the specific budget transparency questions on this site:</p>
+      <div class="foil-template">To: Patricia Perez, Village Clerk
+Incorporated Village of Hempstead
+99 James A. Garner Way
+Hempstead, NY 11550
+
+Re: FOIL Request — Salary Records
+
+Pursuant to NY Public Officers Law §84-90, I request:
+
+1. The current annual salary for Mayor William Hobbs
+2. A breakdown of all positions and salaries included in budget line 1210-101 (Salaries & Wages, Mayor's Office) for FY2026-27
+3. Any vendor invoices or contracts for budget line 1210-486 (Publicity) for FY2024, FY2025, and FY2026
+4. The complete Flock Safety contract(s) including total contract value and term dates
+
+Please respond within 5 business days per FOIL requirements.
+
+Requestor: [Your Name]
+Contact: [Your email or address]</div>
+      <a class="action-btn" href="mailto:clerk@villageofhempstead.org?subject=FOIL%20Request%20-%20Budget%20Records&body=To%3A%20Patricia%20Perez%2C%20Village%20Clerk%0AIncorporated%20Village%20of%20Hempstead%0A99%20James%20A.%20Garner%20Way%0AHempstead%2C%20NY%2011550%0A%0ARe%3A%20FOIL%20Request%0A%0APursuant%20to%20NY%20Public%20Officers%20Law%20%C2%A784-90%2C%20I%20request%3A%0A%0A1.%20The%20current%20annual%20salary%20for%20Mayor%20William%20Hobbs%0A2.%20A%20breakdown%20of%20all%20positions%20and%20salaries%20in%20budget%20line%201210-101%20for%20FY2026-27%0A3.%20Any%20vendor%20invoices%20or%20contracts%20for%20budget%20line%201210-486%20(Publicity)%20for%20FY2024-2026%0A4.%20The%20complete%20Flock%20Safety%20contract(s)%20including%20total%20value%20and%20term%20dates%0A%0APlease%20respond%20within%205%20business%20days%20per%20FOIL%20requirements.%0A%0ARequestor%3A%20%5BYour%20Name%5D">Send FOIL by email ↗</a>
+    </div>
+
+  </div>
+
 
   <!-- MEETING RECORDS -->
   <div class="section-header" id="meetings" style="margin-top: 40px;">
@@ -2010,9 +2160,9 @@ body {
         <span class="chevron">▼</span>
       </div>
       <div class="meeting-body">
-        <div class="meeting-summary">Trustee Burroughs' own variance (274 Rhodes Ave, Case #2164) approved — he filed in June while serving on the Board of Trustees. No conflict-of-interest step was noted in the BOT record. 28 Weir St garage conversion denied after 9 community speakers opposed.</div>
+        <div class="meeting-summary">Trustee Burroughs' own variance (Case #2164) approved — he filed in June while serving on the Board of Trustees. No conflict-of-interest step was noted in the BOT record. 28 Weir St garage conversion denied after 9 community speakers opposed.</div>
         <div class="item-list">
-          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Case 2164 — <strong>Noah Burroughs</strong> (Trustee), 274 Rhodes Ave — mother/daughter conversion: <strong>APPROVED with conditions.</strong> 2 speakers opposed. Burroughs absent from the ZBA meeting — he does not sit on ZBA, but no conflict-of-interest step appeared in the BOT record when he filed.</span></div>
+          <div class="item-row"><span class="item-tag"><span class="tag tag-flag">FLAG</span></span><span class="item-text flag-text">Case 2164 — <strong>Noah Burroughs</strong> (Trustee) — mother/daughter conversion variance: <strong>APPROVED with conditions.</strong> 2 speakers opposed. Burroughs absent from the ZBA meeting — he does not sit on ZBA, but no conflict-of-interest step appeared in the BOT record when he filed.</span></div>
           <div class="item-row"><span class="item-tag"><span class="tag tag-policy">POLICY</span></span><span class="item-text">28 Weir St garage conversion — <strong>DENIED</strong> with 9 community speakers opposed. 89 Grove St 2-family — approved. Bennett Ave 2-family — motion to approve FAILED 2-2 (tied vote, motion fails).</span></div>
         </div>
       </div>
